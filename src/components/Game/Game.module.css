@@ -1,0 +1,10 @@
+.wrapper{
+ display:flex;
+ flex-direction: column;
+ flex-grow:1;
+ background-color:#232323;
+}
+.centered{
+    margin:auto 0;
+    text-align: center;
+}

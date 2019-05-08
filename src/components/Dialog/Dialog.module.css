@@ -1,0 +1,39 @@
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .paragraph {
+    font-size: 3.25rem;
+  }
+  
+  .score {
+    margin-bottom: 50px;
+    font-size: 1.375rem;
+  }
+  
+  .button {
+    min-width: 125px;
+    padding: 7px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .button:first-of-type {
+    margin-top: 50px;
+  }
