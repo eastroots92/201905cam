@@ -1,6 +1,32 @@
-.wrapper{
-    margin-bottom:50px;
-    font-family: Soure Code Pro, monospace;
-    font-size:1.5rem;
-    color:#fff;
+.criminallist{
+    display:flex;
+    justify-content: center;
 }
+.criminal{
+    overflow:hidden;
+    flex-grow:1;
+    height:300px;
+    margin: 0 5px;
+    border:1px solid #fff;
+    transition: all .5s;
+}
+.criminal:hover{
+    background:#fff;
+    color:#000;
+}
+.button{
+    width:100%;
+    height:100%;
+    outline:none;
+    cursor:pointer;
+}
+.criminal.selected{
+    /* transform:scale(50); */
+    border:1px solid #ff0;
+    transition: all .5s;
+    z-index:10;
+    position: relative;
+}
+/* .button.selected{
+    display:none;
+} */

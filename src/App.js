@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './App.module.css'
-import { Navigation, Heading, Game} from './components'
+import { Navigation, Heading, Page0, Dialog} from './components'
 // import { createRGBcode, sampleintLessThan } from './utils'
 class App extends Component {
   state = { 
@@ -51,21 +51,21 @@ class App extends Component {
       <div className={styles.wrapper}>
         <Navigation />
         <Heading />
-        <Game 
+        {selectedIndex == null && (
+        <Page0 
             selectCriminal={this.selectCriminal}
             criminals={criminals} 
             selectedIndex={selectedIndex}
         />
+        )}
         {/* selectedIndex가 널이 아닐때만 조건부 렌더, 참이면 && 뒤값 반환 falsy value */} 
-        {/* {selectedIndex!== null && (
+        {selectedIndex!== null && (
           <Dialog 
-            score={score}
-            correctAnswerIndex={correctAnswerIndex}
             selectedIndex={selectedIndex}
             setNextStage={this.setNextStage}
             setInitialStage={this.setInitialStage}
           />     
-        )} */}
+        )}
       </div>
     )
   }

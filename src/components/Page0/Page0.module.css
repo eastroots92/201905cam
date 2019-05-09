@@ -1,7 +1,6 @@
 .wrapper{
- display:flex;
- flex-direction: column;
- flex-grow:1;
+ margin:0 auto;
+ width:700px;
  background-color:#232323;
 }
 .centered{
