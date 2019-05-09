@@ -3,9 +3,8 @@ import styles from './Heading.module.css'
 
 const Heading = () => (
   <h1 className={styles.wrapper}>
-    The Great
-    <em className={styles.emphasis}>RGB</em>
-    Guessing Challenge
+    마부작침
+    <em className={styles.emphasis}>제목</em>
   </h1>
 )
 

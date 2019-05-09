@@ -1,0 +1,62 @@
+#headerbar {
+    width: 100%;
+    height: 50px;
+    padding: 4px 2% 0px 2%;   
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    background-color: #000;
+} 
+
+.sbslogo {
+width: 45px;
+height: 45px;
+margin-right: 12px; 
+}
+
+.mabulogo {
+      width: 55px;
+      height: 37px;   
+      left: 10px;
+      padding-bottom: 15px;
+}
+
+.social {
+width: 45px;
+height: 45px;   
+float: right;
+cursor: pointer;
+}
+
+@media screen and (max-width: 639px) {
+
+    #headerbar {
+        width: 100%;
+        height: 46px;         
+        padding: 5px 0%; 
+    }
+
+    .mabulogo {
+        width: 55px;
+        height: 37px;  
+        float: left;   
+        position: absolute;
+        top: 12px; 
+        left:  42%;
+    }
+
+    .sbslogo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;  
+    }
+
+
+    #headerbar .social {
+    width: 40px;
+    height: 40px; 
+    float: right;
+    cursor: pointer;
+    }
+}
