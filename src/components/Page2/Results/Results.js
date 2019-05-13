@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Judging = () => {
+const Results = () => {
     return (
         <div>
-            
+            results
         </div>
     );
 };
 
-export default Judging;
+export default Results;

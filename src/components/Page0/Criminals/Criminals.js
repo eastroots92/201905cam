@@ -10,7 +10,8 @@ const Criminals = ({criminals, selectedIndex, selectCriminal}) => {
                <li 
                 key={criminal.key} 
                 className={cx('criminal',{selected: selectedIndex === criminal.key})} 
-                // style={{backgroundColor: criminal.color}}
+                style={{backgroundImage: 
+                    "url("+criminal.imgurl+")"}}
                 >
                    <button 
                     type="button" 

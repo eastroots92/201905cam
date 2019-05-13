@@ -9,10 +9,12 @@
     margin: 0 5px;
     border:1px solid #fff;
     transition: all .5s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x:50%; 
 }
 .criminal:hover{
-    background:#fff;
-    color:#000;
+    background-position-x:80%;
 }
 .button{
     width:100%;

@@ -1,0 +1,13 @@
+.wrapper{
+    width:100%;
+    border:1px solid #dff;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.criminalimg{
+    margin-right:30px;
+}
+.criminalinfo{
+    flex:1;
+}
