@@ -6,7 +6,8 @@ pakage.json
 yarn.lock
 /.pnp
 .pnp.js
-khn.js
+/khn.js
+/wannaremember.js
 
 # testing
 /coverage
