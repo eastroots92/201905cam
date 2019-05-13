@@ -5,7 +5,6 @@ import Criminal from './Criminal'
 import Answer1 from './Answer1'
 import Answer2 from './Answer2'
 import Judging from './Judging'
-import Userinfo from './Userinfo'
 import Page2 from '../Page2'
 
 class Page1 extends Component {
@@ -13,21 +12,25 @@ class Page1 extends Component {
     answer1:null,
     answer2:null,
     judge:null,
-    userinfo:null
+    probation:null
   }
-
+//징역형:벌금형
   selectPenalty = (event) => {
     const { name } = event.target;
     this.setState({answer1:Number(name)})
   }
-  selectSentence = (event) => {
-    const { value } = event.target;
-    this.setState({answer2:value})
+//집행유예 예:아니오
+  selectProbation = (event) => {
+    const { name } = event.target;
+    this.setState({probation:Number(name)})
   }
-
+//판결하기 선택
+  selectJudging= (event) => {
+    this.setState({judge:1})
+  }
   render() {
     const {criminals, selectedIndex, setInitialStage }=this.props
-    const { answer1, answer2, judge, userinfo }=this.state
+    const { answer1, answer2, judge, probation}=this.state
     return (
         <>
         {judge == null &&(
@@ -44,15 +47,17 @@ class Page1 extends Component {
               />
              {answer1 !==null &&(
                <Answer2
-                selectSentence={this.selectSentence}
+                selectProbation={this.selectProbation}
+                probation={probation}
+                answer1={answer1}
                 answer2={answer2}
                />
              )}
-             {answer2 !==null &&(
-               <Userinfo/>
-             )}
-             {userinfo !==null &&(
-              <Judging/>
+             {probation !==null &&(
+              <Judging
+                selectJudging={this.selectJudging}
+                judge={judge}
+              />
              )}
             </div>
           </div>

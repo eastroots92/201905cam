@@ -20,13 +20,6 @@ const Answer1 = ({selectPenalty,answer1}) => {
                 className={cx('button',{selected: answer1 === 1})} 
                 onClick={selectPenalty}
                 name='1'>
-                징역형(집행유예)
-            </button>
-            <button
-                type="button" 
-                className={cx('button',{selected: answer1 === 2})} 
-                onClick={selectPenalty}
-                name='2'>
                 벌금형
             </button>
         </div>
