@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import {url} from '../const'
 import styles from './Page1.module.css'
 import Intro from '../Intro'
@@ -44,17 +43,20 @@ class Page1 extends Component {
     event.preventDefault();
     const {answer1, answer2, answer3, probation, judge} = this.state
     const { selectedIndex }= this.props
-    fetch(`/api/cams`, {
+    fetch(`${url}`, {
     method: 'post',
-    body: {
+    body:JSON.stringify({
       "accId":selectedIndex,
       "answer1":answer1,
       "answer2":answer2,
       "answer3":answer3,
       "sex":probation,
       "age":probation
-    },
-    headers:{'Content-Type':'application/json'}
+    }),
+    headers:{
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
     })
   }
 
