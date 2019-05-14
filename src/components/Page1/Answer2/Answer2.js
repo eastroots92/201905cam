@@ -49,18 +49,18 @@ class Answer2 extends Component {
                         type="button" 
                         className={cx('button',{selected: probation === 0})} 
                         onClick={selectProbation}
-                        name='0'>
+                        name='1'>
                         예
                     </button>
                     <button
                         type="button" 
                         className={cx('button',{selected:probation === 1})} 
                         onClick={selectProbation}
-                        name='1'>
+                        name='0'>
                         아니오
                     </button>
                 </div>
-                {probation === 0 && (
+                {probation === 1 && (
                     <>
                     <p>집행유예를 얼마나 구형할까요?</p>
                     <Slider

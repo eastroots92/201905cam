@@ -13,14 +13,19 @@ class Page1 extends Component {
     answer1:null,
     answer2:null,
     answer3:null,
-    judge:null,
     probation:null,
     datapost:false
   }
 //징역형:벌금형
   selectPenalty = (event) => {
-    const { name } = event.target;
-    this.setState({answer1:Number(name)})
+    let penalty
+    const { name } = event.target
+    if(name === '0'){penalty = 1}
+    else if(name === '1'){penalty=100}
+    this.setState({
+      answer1:Number(name),
+      answer2:penalty
+    })
   }
   sliderChange1 = (value) => {
     this.setState({
@@ -31,7 +36,10 @@ class Page1 extends Component {
 //집행유예 예:아니오
   selectProbation = (event) => {
     const { name } = event.target;
-    this.setState({probation:Number(name)})
+    this.setState({
+      probation:Number(name),
+      answer3:Number(name)
+    })
   }
   sliderChange2 = (value) => {
     this.setState({
@@ -41,7 +49,7 @@ class Page1 extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    const {answer1, answer2, answer3, probation, judge} = this.state
+    const {answer1, answer2, answer3, probation} = this.state
     const { selectedIndex }= this.props
     fetch(`${url}`, {
     method: 'post',
@@ -57,15 +65,19 @@ class Page1 extends Component {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
-    })
+    }).then(
+      this.setState({
+        datapost:true
+      })
+    )
   }
 
   render() {
     const {criminals, selectedIndex, setInitialStage }=this.props
-    const { answer1, answer2, answer3, judge, probation}=this.state
+    const { answer1, answer2, answer3, probation, datapost}=this.state
     return (
         <>
-        {judge === null &&(
+        {datapost === false &&(
             <div className={styles.wrapper}>
             <Intro />
             <div className={styles.centered}>   
@@ -76,6 +88,7 @@ class Page1 extends Component {
               <Answer1 
                 selectPenalty={this.selectPenalty}
                 answer1={answer1}
+                answer2={answer2}
               />
              {answer1 !==null &&(
                <Answer2
@@ -96,13 +109,15 @@ class Page1 extends Component {
             </div>
           </div>
         )}
-        {judge !== null &&(
+        {datapost===true &&(
           <Page2
             criminals={criminals}
             selectedIndex={selectedIndex}
             answer1={answer1}
             answer2={answer2}
             answer3={answer3}
+            datapost={datapost}
+            probation={probation}
             setInitialStage={setInitialStage}
           />
         )}
