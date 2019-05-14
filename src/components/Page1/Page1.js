@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import {url} from '../const'
 import styles from './Page1.module.css'
 import Intro from '../Intro'
 import Criminal from './Criminal'
@@ -11,29 +13,57 @@ class Page1 extends Component {
   state= {
     answer1:null,
     answer2:null,
+    answer3:null,
     judge:null,
-    probation:null
+    probation:null,
+    datapost:false
   }
 //징역형:벌금형
   selectPenalty = (event) => {
     const { name } = event.target;
     this.setState({answer1:Number(name)})
   }
+  sliderChange1 = (value) => {
+    this.setState({
+      answer2: value,
+    })
+  }
+
 //집행유예 예:아니오
   selectProbation = (event) => {
     const { name } = event.target;
     this.setState({probation:Number(name)})
   }
-//판결하기 선택
-  selectJudging= (event) => {
-    this.setState({judge:1})
+  sliderChange2 = (value) => {
+    this.setState({
+      answer3: value,
+    })
   }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    const {answer1, answer2, answer3, probation, judge} = this.state
+    const { selectedIndex }= this.props
+    fetch(`/api/cams`, {
+    method: 'post',
+    body: {
+      "accId":selectedIndex,
+      "answer1":answer1,
+      "answer2":answer2,
+      "answer3":answer3,
+      "sex":probation,
+      "age":probation
+    },
+    headers:{'Content-Type':'application/json'}
+    })
+  }
+
   render() {
     const {criminals, selectedIndex, setInitialStage }=this.props
-    const { answer1, answer2, judge, probation}=this.state
+    const { answer1, answer2, answer3, judge, probation}=this.state
     return (
         <>
-        {judge == null &&(
+        {judge === null &&(
             <div className={styles.wrapper}>
             <Intro />
             <div className={styles.centered}>   
@@ -48,15 +78,17 @@ class Page1 extends Component {
              {answer1 !==null &&(
                <Answer2
                 selectProbation={this.selectProbation}
+                sliderChange1={this.sliderChange1}
+                sliderChange2={this.sliderChange2}
                 probation={probation}
                 answer1={answer1}
                 answer2={answer2}
+                answer3={answer3}
                />
              )}
              {probation !==null &&(
               <Judging
-                selectJudging={this.selectJudging}
-                judge={judge}
+                onSubmit={this.onSubmit}
               />
              )}
             </div>
@@ -68,6 +100,7 @@ class Page1 extends Component {
             selectedIndex={selectedIndex}
             answer1={answer1}
             answer2={answer2}
+            answer3={answer3}
             setInitialStage={setInitialStage}
           />
         )}

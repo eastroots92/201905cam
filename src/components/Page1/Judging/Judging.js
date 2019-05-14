@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './Judging.module.css'
-const Judging = ({judge,selectJudging}) => {
+const Judging = ({onSubmit}) => {
     //post
     return (
         <div className={styles.wrapper}>
             <button 
              type="button"
-             onClick={selectJudging}
+             onClick={onSubmit}
                 className={styles.judgebtn} >
                 판결하기
             </button>

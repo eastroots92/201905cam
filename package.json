@@ -2,7 +2,9 @@
   "name": "201905cam",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://ec2-52-79-199-251.ap-northeast-2.compute.amazonaws.com:3000",
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
