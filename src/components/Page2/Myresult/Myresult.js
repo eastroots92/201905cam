@@ -1,50 +1,44 @@
 import React from 'react'
-import styles from './Results.module.css'
-import { getAverage } from '../../../utils'
+import styles from './Myresult.module.css'
 
-const Results = ({
+const Myresult = ({
     selectedIndex,
     answer1,
     answer2,
     answer3,
     probation,
-    getdata
+    getdata,
+    type,
+    getAverage,
+    filtering,
+    mabuAvg,
+    typename,
+    typefilter
 }) => {
-    let myPenalty;
-        if(answer1===0 && probation === 0){
-            myPenalty=`징역형`
-        }
-        else if(answer1===0 && probation === 1){
-            myPenalty= `징역형 집행유예`
-        }
-        else if(answer1===1 && probation === 0){
-            myPenalty= `벌금형`
-        }
-        else if(answer1===1 && probation === 1){
-            myPenalty= `벌금형 집행유예`
-        }
 
+    //이거 세개를 유틸하나로 만들수잇을듯///렝쓰??///데이터없을때처리
     //내가선택한 구형 필터링 (유형)
-    const avgResult = getdata.filter(d => d.answer1==answer1 && d.sex==probation)
+    const avgResult = filtering(getdata,...typefilter[type])
     console.log(avgResult)
 
     //형량 평균
     const avgResultValue=getAverage(avgResult.map(d=>d.answer2))
-    console.log(avgResultValue)
 
     //집유 평균
     let avgProbation=0; 
     if(probation==1){
         avgProbation=getAverage(avgResult.map(d=>d.answer3))
-        console.log(avgProbation)
     }
+
+    //마부작침분석판결
+    const mabu = mabuAvg[selectedIndex][type]
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.result}>
-                사건{selectedIndex}에 대한 {myPenalty} 분석
+                사건{selectedIndex}에 대한 {typename[type]} 분석
                 <div className={styles.myresult}>
-                    나의 판결 : {answer2}
+                    나의 판결 : {answer2} &nbsp;
                     {answer3 > 0 &&(
                         <>
                         집행유예: {answer3}
@@ -52,20 +46,27 @@ const Results = ({
                     )} 
                 </div>
                 <div className={styles.avgresult}>
-                    시민 판사 평균 : {avgResultValue}
+                    시민 판사 평균 : {avgResultValue} &nbsp;
                     {answer3 > 0 &&(
                         <>
                         집행유예: {avgProbation}
                         </>
                     )}
                 </div>
+                {type !== 3 &&(
                 <div className={styles.maburesult}>
-                    마부작침 분석 판결: 
+                    마부작침 분석 평균: {mabu[0]} &nbsp;
+                    {type ===1 &&(
+                        <>
+                        집행유예: {mabu[1]}
+                        </>
+                    )}
                 </div>
+                )}
             </div>
         </div>
     );
 };
 
 
-export default Results;
+export default Myresult;

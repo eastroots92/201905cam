@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import {url} from '../const'
 import styles from './Page1.module.css'
 import Intro from '../Intro'
@@ -14,7 +15,8 @@ class Page1 extends Component {
     answer2:null,
     answer3:null,
     probation:null,
-    datapost:false
+    datapost:false,
+    type:null
   }
 //징역형:벌금형
   selectPenalty = (event) => {
@@ -51,30 +53,51 @@ class Page1 extends Component {
     event.preventDefault();
     const {answer1, answer2, answer3, probation} = this.state
     const { selectedIndex }= this.props
-    fetch(`${url}`, {
-    method: 'post',
-    body:JSON.stringify({
-      "accId":selectedIndex,
-      "answer1":answer1,
-      "answer2":answer2,
-      "answer3":answer3,
-      "sex":probation,
-      "age":probation
-    }),
-    headers:{
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-    }).then(
-      this.setState({
-        datapost:true
-      })
-    )
+
+        if(answer1===0 && probation === 0){
+          this.setState({
+            type:0
+          })
+        }
+        else if(answer1===0 && probation === 1){
+          this.setState({
+            type:1
+          })
+        }
+        else if(answer1===1 && probation === 0){
+          this.setState({
+            type:2
+          })
+        }
+        else if(answer1===1 && probation === 1){
+          this.setState({
+            type:3
+          })
+        }
+
+
+    axios.post(`${url}`,
+      {
+        headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        accId:selectedIndex,
+        answer1:answer1,
+        answer2:answer2,
+        answer3:answer3,
+        sex:probation,
+        age:probation
+      }).then(res => {
+        this.setState({
+              datapost:true
+        })
+      }).catch( error => { console.log('failed', error) })
   }
 
   render() {
     const {criminals, selectedIndex, setInitialStage }=this.props
-    const { answer1, answer2, answer3, probation, datapost}=this.state
+    const { answer1, answer2, answer3, probation, datapost,type}=this.state
     return (
         <>
         {datapost === false &&(
@@ -111,6 +134,7 @@ class Page1 extends Component {
         )}
         {datapost===true &&(
           <Page2
+            type={type}
             criminals={criminals}
             selectedIndex={selectedIndex}
             answer1={answer1}
