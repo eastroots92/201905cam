@@ -1,1 +1,1 @@
-export const url = 'http://ec2-15-164-67-26.ap-northeast-2.compute.amazonaws.com:3000/api/cams'
+export const url = 'http://ec2-15-164-67-26.ap-northeast-2.compute.amazonaws.com/api/cams'

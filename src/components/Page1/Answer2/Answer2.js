@@ -14,7 +14,8 @@ class Answer2 extends Component {
 //레인지슬라이더 드래그 끝나면 등장하도록 
         return (
             <>
-            <p>형량을 얼마나 구형할까요?</p>
+            <div className={styles.text}>형량을 선택하세요</div>
+            <div className={styles.subtext}>슬라이드를 이동해 형량을 정할 수 있습니다</div>
             <div className={styles.wrapper}>
                 {answer1 === 0 && (
                     <>
