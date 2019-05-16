@@ -1,8 +1,11 @@
-.result div{
-    margin-top:50px;
-}
 .wrapper{
     margin-bottom:50px;
     border:1px solid #fff;
     padding:20px;
+}
+.myresult{
+    margin-top:20px;
+}
+.subtitle{
+    font-weight: bold;
 }

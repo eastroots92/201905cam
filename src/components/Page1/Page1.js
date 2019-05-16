@@ -10,14 +10,29 @@ import Judging from './Judging'
 import Page2 from '../Page2'
 
 class Page1 extends Component {
-  state= {
-    answer1:null,
-    answer2:null,
-    answer3:null,
-    probation:null,
-    datapost:false,
-    type:null
+  constructor(){
+    super()
+    this.state= {
+      answer1:null,
+      answer2:null,
+      answer3:null,
+      probation:null,
+      datapost:false,
+      type:null
+    }
   }
+
+  setInitialStagePage1 = () => {
+    this.props.setInitialStage()
+    this.setState({
+      answer1:null,
+      answer2:null,
+      answer3:null,
+      probation:null,
+      datapost:false,
+      type:null
+    })
+  } 
 //징역형:벌금형
   selectPenalty = (event) => {
     let penalty
@@ -87,7 +102,9 @@ class Page1 extends Component {
         answer2:answer2,
         answer3:answer3,
         sex:probation,
-        age:probation
+        age:probation,
+        // probation:probation,
+        // comment:comment
       }).then(res => {
         this.setState({
               datapost:true
@@ -96,7 +113,7 @@ class Page1 extends Component {
   }
 
   render() {
-    const {criminals, selectedIndex, setInitialStage }=this.props
+    const {criminals, selectedIndex }=this.props
     const { answer1, answer2, answer3, probation, datapost,type}=this.state
     return (
         <>
@@ -142,7 +159,8 @@ class Page1 extends Component {
             answer3={answer3}
             datapost={datapost}
             probation={probation}
-            setInitialStage={setInitialStage}
+            // setInitialStage={setInitialStage}
+            setInitialStagePage1={this.setInitialStagePage1}
           />
         )}
       </>

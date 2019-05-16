@@ -6,7 +6,7 @@ const cx = classnames.bind(styles)
 const Answer1 = ({selectPenalty,answer1}) => {
     return (
         <>
-        <p>어떤 형벌을 내리실건가요?</p>
+        <div className={styles.text}>어떤 형벌을 내리실건가요?</div>
         <div className={styles.wrapper}>
             <button 
                 type="button" 

@@ -1,9 +1,18 @@
 import React from 'react';
+import styles from './Nextgame.module.css'
 
-const Nextgame = () => {
+const Nextgame = ({
+    setInitialStagePage2
+}) => {
     return (
-        <div>
-            다른 사건 판결하기
+        <div className={styles.wrapper}>
+            <button
+              className={styles.button}
+              type="button"
+              onClick={setInitialStagePage2}
+            >
+             다른 사건 판결하기
+          </button>
         </div>
     );
 };

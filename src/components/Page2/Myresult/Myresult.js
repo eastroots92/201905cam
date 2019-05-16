@@ -18,16 +18,15 @@ const Myresult = ({
 
     //이거 세개를 유틸하나로 만들수잇을듯///렝쓰??///데이터없을때처리
     //내가선택한 구형 필터링 (유형)
-    const avgResult = filtering(getdata,...typefilter[type])
-    console.log(avgResult)
+    let myavgResult = filtering(getdata,...typefilter[type])
 
     //형량 평균
-    const avgResultValue=getAverage(avgResult.map(d=>d.answer2))
+    let myavgResultValue=getAverage(myavgResult.map(d=>d.answer2))
 
     //집유 평균
-    let avgProbation=0; 
+    let myavgProbation=0; 
     if(probation==1){
-        avgProbation=getAverage(avgResult.map(d=>d.answer3))
+        myavgProbation=getAverage(myavgResult.map(d=>d.answer3))
     }
 
     //마부작침분석판결
@@ -36,7 +35,7 @@ const Myresult = ({
     return (
         <div className={styles.wrapper}>
             <div className={styles.result}>
-                사건{selectedIndex}에 대한 {typename[type]} 분석
+                <div className={styles.subtitle}>사건{selectedIndex}에 대한 {typename[type]} 분석</div>
                 <div className={styles.myresult}>
                     나의 판결 : {answer2} &nbsp;
                     {answer3 > 0 &&(
@@ -45,16 +44,16 @@ const Myresult = ({
                         </>
                     )} 
                 </div>
-                <div className={styles.avgresult}>
-                    시민 판사 평균 : {avgResultValue} &nbsp;
+                <div className={styles.myresult}>
+                    시민 판사 평균 : {myavgResultValue} &nbsp;
                     {answer3 > 0 &&(
                         <>
-                        집행유예: {avgProbation}
+                        집행유예: {myavgProbation}
                         </>
                     )}
                 </div>
                 {type !== 3 &&(
-                <div className={styles.maburesult}>
+                <div className={styles.myresult}>
                     마부작침 분석 평균: {mabu[0]} &nbsp;
                     {type ===1 &&(
                         <>

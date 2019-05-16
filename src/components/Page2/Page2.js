@@ -33,16 +33,28 @@ const mabuCount=[
 ]
 
 class Page2 extends Component {
-  state = {
+  constructor(){
+    super()
+    this.state = {
       mabuAvg:mabuAvg,
       mabuCount:mabuCount,
       typename:typename,
       typefilter:typefilter,
+      alltype:[0,1,2,3],
       getdata:[],
+    }
   }
 
+  setInitialStagePage2 = () => {
+    this.props.setInitialStagePage1()
+    this.setState({
+      alltype:[0,1,2,3],
+      getdata:[],
+    })
+  } 
   componentDidMount() {
-    const {selectedIndex, type} = this.props;
+    const {selectedIndex, type} = this.props
+    const {alltype} =this.state
     alltype.splice(type,1)
 
     axios.get(`${url}/${selectedIndex}`)
@@ -64,7 +76,7 @@ class Page2 extends Component {
       answer3,
       probation,
       datapost,
-      setInitialStage
+      setInitialStagePage1
     } = this.props
     const {
       getdata,
@@ -77,7 +89,7 @@ class Page2 extends Component {
     return (
       <>
       <div className={styles.wrapper}>
-        <div>내가 선택한 형벌 분석 보기</div>
+        <div className={styles.subtitle}>내가 선택한 형벌 분석 보기</div>
         <Myresult 
           type={type}
           selectedIndex={selectedIndex}
@@ -100,7 +112,7 @@ class Page2 extends Component {
           selectedIndex={selectedIndex}   
           mabuCount={mabuCount} 
         />
-        <div>내가 선택하지 않은 형벌 분석 보기</div>
+        <div className={styles.subtitle}>내가 선택하지 않은 형벌 분석 보기</div>
         <Otherresults 
           type={alltype[0]}
           selectedIndex={selectedIndex}
@@ -133,7 +145,8 @@ class Page2 extends Component {
         />
         <Analysis />        
         <Nextgame 
-          setInitialStage={setInitialStage}
+          // setInitialStage={setInitialStage}
+          setInitialStagePage2={this.setInitialStagePage2}
         />
         <Articles />
 

@@ -13,11 +13,11 @@ const Otherresults = ({
 }) => {
 
   //구형 필터링 (유형)
-    const avgResult = filtering(getdata,...typefilter[type])
+    let avgResult = filtering(getdata,...typefilter[type])
     console.log(avgResult)
 
     //형량 평균
-    const avgResultValue=getAverage(avgResult.map(d=>d.answer2))
+    let avgResultValue=getAverage(avgResult.map(d=>d.answer2))
 
     //집유 평균
     let avgProbation=0; 
@@ -31,8 +31,8 @@ const Otherresults = ({
     return (
         <div className={styles.wrapper}>
             <div className={styles.result}>
-                사건{selectedIndex}에 대한 {typename[type]} 분석
-                <div className={styles.avgresult}>
+                <div className={styles.subtitle}>사건{selectedIndex}에 대한 {typename[type]} 분석</div>
+                <div className={styles.otherresult}>
                     시민 판사 평균 : {avgResultValue} &nbsp;
                     {avgProbation > 0 &&(
                         <>
@@ -41,7 +41,7 @@ const Otherresults = ({
                     )}
                 </div>
                 {type !== 3 &&(
-                <div className={styles.maburesult}>
+                <div className={styles.otherresult}>
                     마부작침 분석 평균: {mabu[0]} &nbsp;
                     {type ===1 &&(
                         <>

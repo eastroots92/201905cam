@@ -1,0 +1,9 @@
+.wrapper{
+    margin:20px 0;
+}
+.button{
+    color:#fff;
+    padding:20px;
+    cursor: pointer;
+    border:1px solid lightcyan;
+}

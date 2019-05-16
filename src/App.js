@@ -52,7 +52,6 @@ class App extends Component {
     const { name } = event.target
     this.setState({selectedIndex:Number(name)})
   }
-
   setNextStage = () => {
     this.setState({
       criminals:criminals,  

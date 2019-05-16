@@ -41,9 +41,9 @@ class Answer2 extends Component {
                     </>
                 )}
            
-                <p> 형법 제52조(집행유예의 요건) 제1항에 따라 3년 이하의 징역이나 금고 또는 500만 원 이하의 벌금형을 선고할 경우 1년 이상 5년 이하의 기간 형의 집행을 유예할 수 있습니다.
-                    <br/>집행유예기간을 주시겠습니까?
-                </p>
+                <div className={styles.text}> 형법 제52조(집행유예의 요건) 제1항에 따라 3년 이하의 징역이나 금고 또는 500만 원 이하의 벌금형을 선고할 경우 1년 이상 5년 이하의 기간 형의 집행을 유예할 수 있습니다.
+                    <br/><br/>집행유예기간을 주시겠습니까?
+                </div>
                  <div className={styles.btnwrapper}>
                     <button 
                         type="button" 
