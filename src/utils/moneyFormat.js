@@ -18,7 +18,7 @@ const moneyFormat = (number) => {
         if(!resultArray[i]) continue;
         resultString = String(resultArray[i]) + unitWords[i] + ' ' + resultString;
     }
-    return resultString;
+    return resultString+'원';
 }
 
 export default moneyFormat

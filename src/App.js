@@ -46,12 +46,25 @@ class App extends Component {
   state = { 
     criminals: criminals, 
     selectedIndex: null,
+    selectedSex:null,
+    selectedAge:null
+  }
+
+  selectSex = (event) => {
+    const { name } = event.target
+    this.setState({selectedSex:Number(name)})
+  }
+  
+  selectAge = (event) => {
+    const { name } = event.target
+    this.setState({selectedAge:Number(name)})
   }
 
   selectCriminal = (event) => {
     const { name } = event.target
     this.setState({selectedIndex:Number(name)})
   }
+
   setNextStage = () => {
     this.setState({
       criminals:criminals,  
@@ -67,7 +80,7 @@ class App extends Component {
   } 
 
   render() {
-    const { criminals, selectedIndex }=this.state
+    const { criminals, selectedIndex, selectedSex, selectedAge }=this.state
     return (
       <div className={styles.wrapper}>
         <Navigation />
@@ -77,9 +90,12 @@ class App extends Component {
             selectCriminal={this.selectCriminal}
             criminals={criminals} 
             selectedIndex={selectedIndex}
+            selectedSex={selectedSex}
+            selectedAge={selectedAge}
+            selectSex={this.selectSex}
+            selectAge={this.selectAge}
         />
         )}
-        {/* selectedIndex가 널이 아닐때만 조건부 렌더, 참이면 && 뒤값 반환 falsy value */} 
         {selectedIndex!== null && (
           <Page1
             criminals={criminals}

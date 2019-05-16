@@ -1,10 +1,48 @@
 import React from 'react';
 import styles from './Intro.module.css'
+import classnames from 'classnames/bind'
 
-const Intro = () => {
+const cx = classnames.bind(styles)
+const sex = [
+    {key:0,
+     val:'남성'},
+    {key:1,
+    val:'여성'},
+    {key:2,
+    val:'그 외'}
+]
+
+const Intro = ({
+    selectedSex,
+    selectedAge,
+    selectSex,
+    selectAge
+}) => {
     return (
         <div className={styles.wrapper}>
-            시민배심원이 되어 판결을 내려보세요.<br/>판결을 내릴 피고인을 선택하세요
+            <ul className={styles.selectsex}>
+            {sex.map(s =>(
+                <li 
+                    key={s.key}
+                    className={cx('sex',{selected: selectedSex === s.key})} 
+                    >
+                    <button 
+                        type="button" 
+                        className={cx('button',{selected: selectedSex === s.key})} 
+                        onClick={selectSex}
+                        name={s.key}
+                    >
+                        {s.val}
+                    </button>
+                </li>
+            ))}
+            </ul>
+
+            <div className={styles.userinfo}>
+                당신은 '시민판사' 입니다.<br/>
+                오늘 당신은 불법촬영 사건을 판결해야합니다.<br/><br/>
+                아래 피고인 5명에게 당신은 어떤 판결을 내리시겠습니까?
+            </div>
         </div>
     );
 };

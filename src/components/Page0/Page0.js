@@ -4,9 +4,22 @@ import Intro from '../Intro'
 import Criminals from './Criminals'
 import Startgame from './Startgame'
 
-const Page0 = ({criminals,selectedIndex, selectCriminal}) => (
+const Page0 = ({
+  criminals,
+  selectedIndex, 
+  selectCriminal, 
+  selectedSex, 
+  selectedAge,
+  selectSex,
+  selectAge
+}) => (
   <div className={styles.wrapper}>
-    <Intro />
+    <Intro 
+      selectAge={selectAge}
+      selectSex={selectSex}
+      selectedSex={selectedSex}
+      selectedAge={selectedAge}
+    />
     <div className={styles.centered}>   
       <Criminals 
         criminals={criminals} 

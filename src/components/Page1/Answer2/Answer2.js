@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Answer2.module.css'
+import { monthFormat, moneyFormat } from '../../../utils'
 import classnames from 'classnames/bind'
 import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
@@ -23,22 +24,24 @@ class Answer2 extends Component {
                     min={1}
                     max={60}
                     step={1}
+                    format={monthFormat}
                     value={answer2}
                     onChange={sliderChange1}
                     />
-                    <div className='value'>{answer2}월</div>
+                    <div className='value'>{monthFormat(answer2)}</div>
                     </>
                 )}
                 {answer1 === 1 && (
                     <>
                     <Slider
-                    min={100}
-                    max={3000}
-                    step={100}
+                    min={1000000}
+                    max={30000000}
+                    step={1000000}
+                    format={moneyFormat}
                     value={answer2}
                     onChange={sliderChange1}
                     />
-                    <div className='value'>{answer2}만원</div>
+                    <div className='value'>{moneyFormat(answer2)}</div>
                     </>
                 )}
            
@@ -68,10 +71,11 @@ class Answer2 extends Component {
                         min={1}
                         max={60}
                         step={1}
+                        format={monthFormat}
                         value={answer3}
                         onChange={sliderChange2}
                         />
-                        <div className='value'>{answer3}월</div>
+                        <div className='value'>{monthFormat(answer3)}</div>
                     </>
                 )}            
             </div>
