@@ -48,6 +48,8 @@ class Page1 extends Component {
     this.setState({
       answer1:Number(name),
       answer2:penalty,
+      slider1flag:0,
+      slider2flag:0
     })
   }
 
@@ -62,17 +64,21 @@ class Page1 extends Component {
       }
 
       let flag2 
+      let pbflag
       if(this.state.answer1===0 &&value>36){
         flag2=1
+        pbflag=0
       }else if(this.state.answer1 ===1 && value>5000000){
         flag2=1
+        pbflag=0
       }else{flag2=0}
 
 
     this.setState({
       answer2: value,
       slider1flag:flag1,
-      slider2flag:flag2
+      slider2flag:flag2,
+      probation:pbflag
     })
   }
 

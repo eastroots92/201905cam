@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './Page0.module.css'
 import Intro from '../Intro'
 import Criminals from './Criminals'
-import Startgame from './Startgame'
 
 const Page0 = ({
   criminals,
@@ -27,7 +26,6 @@ const Page0 = ({
         selectCriminal={selectCriminal}
       /> 
     </div>
-    <Startgame />
   </div>
 )
 

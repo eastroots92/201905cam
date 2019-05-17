@@ -3,3 +3,17 @@
     line-height:1.5rem;
     margin: 30px 0;
 }
+.selectsex, .selectage{
+    display:flex;
+    justify-content: center;
+}
+.button{
+    cursor:pointer;
+    padding:5px;
+    color:#fff;
+    border:1px solid #fff;
+}
+.button.selected{
+    border:1px solid cyan;
+    color:cyan;
+}
