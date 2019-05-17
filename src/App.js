@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './App.module.css'
-import { Navigation, Heading, Page0, Page1, Page2} from './components'
+import { Navigation, Heading, Page0, Page1} from './components'
 // import { createRGBcode, sampleintLessThan } from './utils'
 const criminals=[
   { key:0, name:'0', 
@@ -101,6 +101,8 @@ class App extends Component {
             criminals={criminals}
             selectedIndex={selectedIndex}
             setInitialStage={this.setInitialStage}
+            selectedSex={selectedSex}
+            selectedAge={selectedAge}
           />     
         )}
       </div>

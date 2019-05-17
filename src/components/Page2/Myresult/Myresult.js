@@ -16,16 +16,10 @@ const Myresult = ({
     typefilter
 }) => {
 
-    //이거 세개를 유틸하나로 만들수잇을듯///렝쓰??///데이터없을때처리
-    //내가선택한 구형 필터링 (유형)
     let myavgResult = filtering(getdata,...typefilter[type])
-
-    //형량 평균
     let myavgResultValue=getAverage(myavgResult.map(d=>d.answer2))
-
-    //집유 평균
     let myavgProbation=0; 
-    if(probation==1){
+    if(probation===1){
         myavgProbation=getAverage(myavgResult.map(d=>d.answer3))
     }
 

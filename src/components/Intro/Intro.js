@@ -11,6 +11,20 @@ const sex = [
     {key:2,
     val:'그 외'}
 ]
+const age = [
+    {key:0,
+     val:'10대'},
+    {key:1,
+    val:'20대'},
+    {key:2,
+    val:'30대'},
+    {key:3,
+    val:'40대'},
+    {key:4,
+    val:'50대'},
+    {key:5,
+    val:'60대 이상'}
+]
 
 const Intro = ({
     selectedSex,
@@ -33,6 +47,23 @@ const Intro = ({
                         name={s.key}
                     >
                         {s.val}
+                    </button>
+                </li>
+            ))}
+            </ul>
+            <ul className={styles.selectage}>
+            {age.map(a =>(
+                <li 
+                    key={a.key}
+                    className={cx('sex',{selected: selectedAge === a.key})} 
+                    >
+                    <button 
+                        type="button" 
+                        className={cx('button',{selected: selectedAge === a.key})} 
+                        onClick={selectAge}
+                        name={a.key}
+                    >
+                        {a.val}
                     </button>
                 </li>
             ))}

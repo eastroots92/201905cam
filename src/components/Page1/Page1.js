@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {url} from '../const'
 import styles from './Page1.module.css'
-import Intro from '../Intro'
 import Criminal from './Criminal'
 import Answer1 from './Answer1'
-import Answer2 from './Answer2'
+import Slider1 from './Slider1'
+import Probation from './Probation'
 import Judging from './Judging'
 import Page2 from '../Page2'
 
@@ -17,8 +17,11 @@ class Page1 extends Component {
       answer2:null,
       answer3:null,
       probation:null,
+      comment:'',
       datapost:false,
-      type:null
+      type:null,
+      slider1flag:0,
+      slider2flag:0
     }
   }
 
@@ -29,8 +32,11 @@ class Page1 extends Component {
       answer2:null,
       answer3:null,
       probation:null,
+      comment:'',
       datapost:false,
-      type:null
+      type:null,
+      slider1flag:0,
+      slider2flag:0
     })
   } 
 //징역형:벌금형
@@ -47,27 +53,37 @@ class Page1 extends Component {
   sliderChange1 = (value) => {
     this.setState({
       answer2: value,
+      slider1flag:1
     })
   }
 
 //집행유예 예:아니오
   selectProbation = (event) => {
     const { name } = event.target;
+    let flag;
+    (name==='0')?flag=1:flag=0
     this.setState({
       probation:Number(name),
-      answer3:Number(name)
+      slider2flag:flag
     })
   }
   sliderChange2 = (value) => {
     this.setState({
       answer3: value,
+      slider2flag:1
+    })
+  }
+  //코멘트
+  commentChange = (e) => {
+    this.setState({
+      comment:e.target.value,
     })
   }
 
   onSubmit = (event) => {
     event.preventDefault();
-    const {answer1, answer2, answer3, probation} = this.state
-    const { selectedIndex }= this.props
+    const {answer1, answer2, answer3, probation, comment} = this.state
+    const { selectedIndex, selectedAge, selectedSex }= this.props
 
         if(answer1===0 && probation === 0){
           this.setState({
@@ -101,11 +117,23 @@ class Page1 extends Component {
         answer1:answer1,
         answer2:answer2,
         answer3:answer3,
-        sex:probation,
-        age:probation,
-        // probation:probation,
-        // comment:comment
+        sex:selectedSex,
+        age:selectedAge,
+        probation:probation,
+        comment:comment
       }).then(res => {
+        console.log(
+          {
+            accId:selectedIndex,
+            answer1:answer1,
+            answer2:answer2,
+            answer3:answer3,
+            sex:selectedSex,
+            age:selectedAge,
+            probation:probation,
+            comment:comment
+          }
+        )
         this.setState({
               datapost:true
         })
@@ -113,13 +141,12 @@ class Page1 extends Component {
   }
 
   render() {
-    const {criminals, selectedIndex }=this.props
-    const { answer1, answer2, answer3, probation, datapost,type}=this.state
+    const { criminals, selectedIndex }=this.props
+    const { answer1, answer2, answer3, probation, datapost, type, comment, slider1flag, slider2flag }=this.state
     return (
         <>
         {datapost === false &&(
-            <div className={styles.wrapper}>
-            <Intro />
+          <div className={styles.wrapper}>
             <div className={styles.centered}>   
               <Criminal
                 criminals={criminals} 
@@ -130,8 +157,15 @@ class Page1 extends Component {
                 answer1={answer1}
                 answer2={answer2}
               />
-             {answer1 !==null &&(
-               <Answer2
+              {answer1 !== null &&(
+                  <Slider1
+                  sliderChange1={this.sliderChange1}
+                  answer1={answer1}
+                  answer2={answer2}
+                />
+              )}
+             {slider1flag ===1 &&(
+               <Probation
                 selectProbation={this.selectProbation}
                 sliderChange1={this.sliderChange1}
                 sliderChange2={this.sliderChange2}
@@ -139,10 +173,13 @@ class Page1 extends Component {
                 answer1={answer1}
                 answer2={answer2}
                 answer3={answer3}
+                slider2flag={slider2flag}
                />
-             )}
-             {probation !==null &&(
+             )}            
+             {slider2flag ===1 &&(
               <Judging
+                commentChange={this.commentChange}
+                comment={comment}
                 onSubmit={this.onSubmit}
               />
              )}
@@ -159,7 +196,6 @@ class Page1 extends Component {
             answer3={answer3}
             datapost={datapost}
             probation={probation}
-            // setInitialStage={setInitialStage}
             setInitialStagePage1={this.setInitialStagePage1}
           />
         )}
