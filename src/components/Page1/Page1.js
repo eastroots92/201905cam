@@ -47,24 +47,44 @@ class Page1 extends Component {
     else if(name === '1'){penalty=100}
     this.setState({
       answer1:Number(name),
-      answer2:penalty
+      answer2:penalty,
     })
   }
+
   sliderChange1 = (value) => {
+      let flag1
+      if(this.state.answer1===0 && value<=36){
+        flag1=1
+      }else if(this.state.answer1 ===1 && value<=5000000){
+        flag1=1
+      }else{
+        flag1=0
+      }
+
+      let flag2 
+      if(this.state.answer1===0 &&value>36){
+        flag2=1
+      }else if(this.state.answer1 ===1 && value>5000000){
+        flag2=1
+      }else{flag2=0}
+
+
     this.setState({
       answer2: value,
-      slider1flag:1
+      slider1flag:flag1,
+      slider2flag:flag2
     })
   }
 
 //집행유예 예:아니오
   selectProbation = (event) => {
-    const { name } = event.target;
-    let flag;
-    (name==='0')?flag=1:flag=0
+    const { name } = event.target
+    let flag2
+    (name==='0')?flag2=1:flag2=0
     this.setState({
       probation:Number(name),
-      slider2flag:flag
+      slider2flag:flag2,
+      answer3:12
     })
   }
   sliderChange2 = (value) => {
@@ -164,7 +184,7 @@ class Page1 extends Component {
                   answer2={answer2}
                 />
               )}
-             {slider1flag ===1 &&(
+             {slider1flag === 1 &&(
                <Probation
                 selectProbation={this.selectProbation}
                 sliderChange1={this.sliderChange1}
@@ -176,7 +196,7 @@ class Page1 extends Component {
                 slider2flag={slider2flag}
                />
              )}            
-             {slider2flag ===1 &&(
+             {slider2flag === 1 &&(
               <Judging
                 commentChange={this.commentChange}
                 comment={comment}

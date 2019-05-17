@@ -15,7 +15,7 @@ const Judging = ({onSubmit, comment,commentChange}) => {
             <button 
              type="button"
              onClick={onSubmit}
-            className={styles.judgebtn} >
+             className={styles.judgebtn} >
                 판결하기
             </button>
         </div>
