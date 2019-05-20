@@ -1,17 +1,17 @@
 .wrapper{
     font-size:18px;
     text-align: center;
-    line-height:1.5em;
+    line-height:170%;
     margin-bottom:50px;
 }
 .selectsex, .selectage{
-    margin:10px;
+    margin:10px 0;
     display:flex;
     justify-content: center;
 }
 .button{
     cursor:pointer;
-    padding:5px 10px;
+    padding:3px 10px;
     margin:0 5px;
     color:#ccc;
     border:1px solid #ccc;

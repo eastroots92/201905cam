@@ -12,7 +12,7 @@
 .rangeslider,
 .rangeslider .rangeslider__fill {
   display: block;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+  /* box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4); */
 }
 .rangeslider .rangeslider__handle {
   background: #fff;
@@ -26,13 +26,13 @@
   opacity: 1;
 }
 .rangeslider .rangeslider__handle-tooltip {
-  width: 40px;
+  width: 80px;
   height: 40px;
   text-align: center;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
   font-weight: normal;
-  font-size: 14px;
+  font-size: 18px;
   transition: all 100ms ease-in;
   border-radius: 4px;
   display: inline-block;
@@ -132,4 +132,20 @@
   display: inline-block;
   top: 10px;
   transform: translate3d(-50%, 0, 0);
+}
+/* ticks */
+.ticks{
+  width:680px;
+  margin:0 10px 0 10px;
+  display:flex;
+  justify-content: space-between;
+  padding:0 5px;
+}
+/* .tick{
+  flex:1;
+} */
+.line{
+  width:2px;
+  height:5px;
+  background:#fff;
 }

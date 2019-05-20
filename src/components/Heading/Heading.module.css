@@ -25,9 +25,10 @@
 
 .wrapper img{
   width:100%;
-  margin-bottom:100px;
+  /* margin-bottom:100px; */
 }
 .startbtn{
+  margin:60px 0;
   padding:20px 30px;
   border:1px solid #a5e5d9;
   border-radius: 20px;

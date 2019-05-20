@@ -22,7 +22,7 @@ const Page0 = ({
       selectedSex={selectedSex}
       selectedAge={selectedAge}
     />
-    <div className={styles.centered}>   
+    <div className={styles.criminals}>   
       <Criminals 
         criminals={criminals} 
         selectedIndex={selectedIndex}

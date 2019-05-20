@@ -1,13 +1,13 @@
 .wrapper{
  margin:0 auto;
  width:700px;
- height:100vh;
- display:flex;
+ /* display:flex;
  flex-direction: column;
  justify-content: center;
- align-items: center;
+ align-items: center; */
 }
-.centered{
+.criminals{
     /* margin:auto 0; */
     text-align: center;
+    margin-bottom:30vh;
 }

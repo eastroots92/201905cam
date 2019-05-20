@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Slider1.module.css'
 import { monthFormat, moneyFormat } from '../../../utils'
 import Slider from 'react-rangeslider'
-import './Slider1.module.css'
+// import './Slider1.module.css'
 // import 'react-rangeslider/lib/index.css'
 
 const Slider1 = ({
@@ -23,6 +23,32 @@ const Slider1 = ({
                     value={answer2}
                     onChange={sliderChange1}
                     />
+                    <div className={styles.ticks}>
+                        <div className={styles.tick}>
+                            <div className={styles.line}></div>
+                            <div className={styles.year}>1개월</div>
+                        </div>
+                        <div className={styles.tick}>
+                            <div className={styles.line}></div>
+                            <div className={styles.year}>1년</div>
+                        </div>
+                        <div className={styles.tick}>
+                            <div className={styles.line}></div>
+                            <div className={styles.year}>2년</div>
+                        </div>
+                        <div className={styles.tick}>
+                            <div className={styles.line}></div>
+                            <div className={styles.year}>3년</div>
+                        </div>
+                        <div className={styles.tick}>
+                            <div className={styles.line}></div>
+                            <div className={styles.year}>4년</div>
+                        </div>
+                        <div className={styles.tick}>
+                            <div className={styles.line}></div>
+                            <div className={styles.year}>5년</div>
+                        </div>
+                    </div>
                     <div className='value'>{monthFormat(answer2)}</div>
                     </>
                 )}
