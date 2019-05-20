@@ -16,7 +16,7 @@ class Probation extends Component {
             <>
             <div className={styles.wrapper}>     
                 <div className={styles.text}> 형법 제52조(집행유예의 요건) 제1항에 따라 3년 이하의 징역이나 금고 또는 500만 원 이하의 벌금형을 선고할 경우 1년 이상 5년 이하의 기간 형의 집행을 유예할 수 있습니다.
-                    <br/><br/>집행유예기간을 주시겠습니까?
+                    <br/><br/>형의 집행을 유예하시겠습니까?
                 </div>
                  <div className={styles.btnwrapper}>
                     <button 
@@ -36,7 +36,7 @@ class Probation extends Component {
                 </div>
                 {probation === 1 && (
                     <>
-                    <p>집행유예를 얼마나 구형할까요?</p>
+                    <p>집행유예 기간을 선택하세요</p>
                     <Slider
                         min={12}
                         max={60}

@@ -1,9 +1,13 @@
 .wrapper{
  margin:0 auto;
  width:700px;
- background-color:#232323;
+ height:100vh;
+ display:flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 }
 .centered{
-    margin:auto 0;
+    /* margin:auto 0; */
     text-align: center;
 }

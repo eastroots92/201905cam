@@ -173,7 +173,8 @@ class Page1 extends Component {
         <>
         {datapost === false &&(
           <div className={styles.wrapper}>
-            <div className={styles.centered}>   
+            <div className={styles.centered}>
+              <div>피고인에게 당신은 어떤 판결을 내리시겠습니까?</div>   
               <Criminal
                 criminals={criminals} 
                 selectedIndex={selectedIndex}

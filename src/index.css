@@ -1,3 +1,16 @@
+@font-face{
+  font-family:'hgg';
+  font-style:normal;
+  font-weight: 400;
+  src:url(./assets/font/HGG20g.ttf);
+}
+@font-face{
+  font-family:'hgg';
+  font-style:normal;
+  font-weight: 800;
+  src:url(./assets/font/HGG80g.ttf); 
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -54,7 +67,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:#fff;
-  background:#232323;
+  background:#000;
 }
 
 a {
@@ -73,9 +86,15 @@ button {
 }
 body::-webkit-scrollbar { width: 0 !important }
 body { 
+  font-family:'hgg', sans-serif;
   overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */ 
 }
 .slider{
   width:100%;
 }
+button:focus {outline:0;}

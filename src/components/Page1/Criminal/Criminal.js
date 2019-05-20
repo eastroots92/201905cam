@@ -10,7 +10,8 @@ const Criminal= ({criminals, selectedIndex}) => {
                     <img src={criminals[selectedIndex].imgurl} alt="" width="200"/>
                 </div>               
                 <div className={styles.criminalinfo}>
-                {criminals[selectedIndex].script}
+                <div>{criminals[selectedIndex].script}</div>     
+                <div> {criminals[selectedIndex].law}</div>
                </div>
         </div>
     );

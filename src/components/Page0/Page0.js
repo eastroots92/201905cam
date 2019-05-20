@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Page0.module.css'
 import Intro from '../Intro'
 import Criminals from './Criminals'
+import Heading from '../Heading'
 
 const Page0 = ({
   criminals,
@@ -12,6 +13,8 @@ const Page0 = ({
   selectSex,
   selectAge
 }) => (
+  <>
+  <Heading />
   <div className={styles.wrapper}>
     <Intro 
       selectAge={selectAge}
@@ -27,6 +30,7 @@ const Page0 = ({
       /> 
     </div>
   </div>
+  </>
 )
 
 export default Page0

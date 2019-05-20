@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './Slider1.module.css'
 import { monthFormat, moneyFormat } from '../../../utils'
 import Slider from 'react-rangeslider'
-import 'react-rangeslider/lib/index.css'
+import './Slider1.module.css'
+// import 'react-rangeslider/lib/index.css'
 
 const Slider1 = ({
     answer1,answer2,sliderChange1,
