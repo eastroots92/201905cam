@@ -1,10 +1,14 @@
 .wrapper {
     width: 700px;;
     margin:0 auto;
+    padding-bottom:100px;
     color: white;
     text-align: center;
   }
-  
+  .title{
+    margin:50px 0;
+    font-size:24px;
+  }
   .button {
     min-width: 125px;
     padding: 7px;
@@ -22,4 +26,19 @@
     margin-top: 50px;
   }
 
-  
+  .answer1section{
+    margin-top:30px;
+    background:#333;
+    padding:0 30px;
+  }
+  .probationsection{
+    margin-top:30px;
+    background:#333;
+    padding:0 30px;
+  }
+  .judgesection{
+    margin-top:30px;
+    background:#333;
+    padding:0 30px;
+
+  }

@@ -1,7 +1,9 @@
 .wrapper {
-    width: 700px;;
-    margin:0 auto;
-    color: white;
+    margin:50px auto;
+    width: 700px;
+    padding:0 30px;
+    background:#eee;
+    color: black;
     text-align: center;
   }
 .subtitle{

@@ -1,13 +1,16 @@
 import React from 'react'
 import styles from './Heading.module.css'
-import title from '../../assets/img/title.png'
+import title from '../../../assets/img/title.png'
 
-const Heading = () => (
+const Heading = ({
+  startscroll
+}) => (
   <div className={styles.wrapper}>
     <img className={styles.title} src={title} alt="title" />
     <button 
+      to="intro" 
       className={styles.startbtn}
-      // onClick={}
+      onClick={startscroll}
       >
       시작하기
     </button>

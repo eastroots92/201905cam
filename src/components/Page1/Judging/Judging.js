@@ -5,13 +5,13 @@ const Judging = ({onSubmit, comment,commentChange}) => {
     return (
         <div className={styles.wrapper}>
             <div>
-                <div>피고인에게 마지막 한 마디</div>
+                <div className={styles.title}>피고인에게 마지막 한 마디</div>
                 <input 
+                className={styles.comment}
                 type="text"
                 maxLength="100"
                 name="comment"
                 placeholder="(공백 포함 100자 이내로 제한)"
-                className={styles.commentbox}
                 onChange={commentChange}
                 />
             </div>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Chart from 'react-apexcharts'
 import {url} from '../const'
-import { getAverage } from '../../utils'
-import { filtering } from '../../utils'
+import { getAverage, filtering } from '../../utils'
 import styles from './Page2.module.css'
 import Myresult from './Myresult'
 import Otherresults from './Otherresults'
@@ -12,7 +12,8 @@ import Nextgame from './Nextgame'
 import Articles from './Articles'
 
 
-const typename=['징역형','징역형 집행유예','벌금형','벌금형 집행유예']
+// const typename=['징역형','징역형 집행유예','벌금형','벌금형 집행유예']
+const typename=['징역','징역','벌금','벌금']
 const typefilter=[[0,0],[0,1],[1,0],[1,1]]
 const alltype=[0,1,2,3]
 //1차[사건번호] 2차[타입] 3차[형량,집유]
@@ -42,6 +43,7 @@ class Page2 extends Component {
       typefilter:typefilter,
       alltype:[0,1,2,3],
       getdata:[],
+  
     }
   }
 
@@ -51,6 +53,7 @@ class Page2 extends Component {
       alltype:[0,1,2,3],
       getdata:[],
     })
+    this.props.scrolltop()
   } 
   componentDidMount() {
     const {selectedIndex, type} = this.props
@@ -65,6 +68,7 @@ class Page2 extends Component {
         });
       }).catch( error => { console.log('failed', error) })
   }
+
   
   render() {
     const { 
@@ -75,8 +79,9 @@ class Page2 extends Component {
       answer2,
       answer3,
       probation,
+      comment,
       datapost,
-      setInitialStagePage1
+      setInitialStagePage1,
     } = this.props
     const {
       getdata,
@@ -89,13 +94,15 @@ class Page2 extends Component {
     return (
       <>
       <div className={styles.wrapper}>
-        <div className={styles.subtitle}>내가 선택한 형벌 분석 보기</div>
+        {/* <div className={styles.subtitle}>내가 선택한 형벌 분석 보기</div> */}
         <Myresult 
           type={type}
+          criminals={criminals}
           selectedIndex={selectedIndex}
           answer1={answer1}
           answer2={answer2}
           answer3={answer3}
+          comment={comment}
           probation={probation}
           getdata={getdata}
           getAverage={getAverage}
@@ -105,14 +112,17 @@ class Page2 extends Component {
           typefilter={typefilter}
         />
         <Totalresult 
+          criminals={criminals}
           getdata={getdata}
           typefilter={typefilter}
           filtering={filtering}
+          getAverage={getAverage}
+          mabuAvg={mabuAvg}
           type={type}
           selectedIndex={selectedIndex}   
           mabuCount={mabuCount} 
         />
-        <div className={styles.subtitle}>내가 선택하지 않은 형벌 분석 보기</div>
+        {/* <div className={styles.subtitle}>내가 선택하지 않은 형벌 분석 보기</div>
         <Otherresults 
           type={alltype[0]}
           selectedIndex={selectedIndex}
@@ -142,8 +152,8 @@ class Page2 extends Component {
           mabuAvg={mabuAvg}
           typename={typename}
           typefilter={typefilter}
-        />
-        <Analysis />        
+        /> */}
+        {/* <Analysis /> */}
         <Nextgame 
           // setInitialStage={setInitialStage}
           setInitialStagePage2={this.setInitialStagePage2}

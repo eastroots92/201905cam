@@ -6,8 +6,17 @@
     align-items: center;
 }
 .criminalimg{
-    margin-right:30px;
+    border:1px solid #fff;
 }
 .criminalinfo{
+    word-break: keep-all;
     flex:1;
+    line-height:170%;
+    padding: 0 50px;
+}
+.script{
+    font-size:18px;
+}
+.law{
+   color:#999;
 }

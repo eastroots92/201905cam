@@ -19,7 +19,21 @@
 .wrapper button:hover{
     background-color:cyan;
 }
-.text{
-    margin-top:50px;
-    line-height:1.5rem;
+.button.selected{
+    background-color:cyan;
 }
+.title{
+    font-weight: 800;
+}
+.subtitle{
+    margin-top:50px;
+    line-height:170%;
+}
+.sliderwrapper{
+    margin-top:80px;
+}
+.value{
+    font-size:26px;
+    font-weight: 800;
+    margin-top:100px;
+  }

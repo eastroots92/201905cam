@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import * as Scroll from 'react-scroll'
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import {url} from '../const'
 import styles from './Page1.module.css'
 import Criminal from './Criminal'
@@ -24,6 +26,11 @@ class Page1 extends Component {
       slider2flag:0
     }
   }
+// scroll
+  scrollToTop = () => {
+    scroll.scrollToTop()
+  }
+
 
   setInitialStagePage1 = () => {
     this.props.setInitialStage()
@@ -164,21 +171,23 @@ class Page1 extends Component {
               datapost:true
         })
       }).catch( error => { console.log('failed', error) })
+
+      this.props.scrolltop()
   }
 
   render() {
-    const { criminals, selectedIndex }=this.props
+    const { criminals, selectedIndex, scrolltop }=this.props
     const { answer1, answer2, answer3, probation, datapost, type, comment, slider1flag, slider2flag }=this.state
     return (
         <>
         {datapost === false &&(
           <div className={styles.wrapper}>
-            <div className={styles.centered}>
-              <div>피고인에게 당신은 어떤 판결을 내리시겠습니까?</div>   
+              <div className={styles.title}>피고인에게 당신은 어떤 판결을 내리시겠습니까?</div>   
               <Criminal
                 criminals={criminals} 
                 selectedIndex={selectedIndex}
               />
+              <div className={styles.answer1section}>
               <Answer1 
                 selectPenalty={this.selectPenalty}
                 answer1={answer1}
@@ -191,7 +200,9 @@ class Page1 extends Component {
                   answer2={answer2}
                 />
               )}
-             {slider1flag === 1 &&(
+              </div>
+              <div className={styles.probationsection}>
+             {slider1flag === 1 &&(             
                <Probation
                 selectProbation={this.selectProbation}
                 sliderChange1={this.sliderChange1}
@@ -201,8 +212,10 @@ class Page1 extends Component {
                 answer2={answer2}
                 answer3={answer3}
                 slider2flag={slider2flag}
-               />
-             )}            
+               />             
+             )} 
+             </div>
+             <div className={styles.judgesection}>        
              {slider2flag === 1 &&(
               <Judging
                 commentChange={this.commentChange}
@@ -210,7 +223,7 @@ class Page1 extends Component {
                 onSubmit={this.onSubmit}
               />
              )}
-            </div>
+             </div>  
           </div>
         )}
         {datapost===true &&(
@@ -223,7 +236,9 @@ class Page1 extends Component {
             answer3={answer3}
             datapost={datapost}
             probation={probation}
+            comment={comment}
             setInitialStagePage1={this.setInitialStagePage1}
+            scrolltop={scrolltop}
           />
         )}
       </>

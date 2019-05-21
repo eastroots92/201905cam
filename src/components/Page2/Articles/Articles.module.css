@@ -1,4 +1,18 @@
 .wrapper{
     margin: 20px 0;
-    padding-bottom:100px;
+    padding-bottom:50px;
+}
+.title{
+    font-size:18px;
+    font-weight: 800;
+    margin-bottom:20px;
+}
+.articles{
+    width:100%;
+}
+.articles li{
+    width:100%;
+    height:80px;
+    margin-bottom:10px;
+    background-color:#999;
 }

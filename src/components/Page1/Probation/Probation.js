@@ -15,20 +15,21 @@ class Probation extends Component {
         return (
             <>
             <div className={styles.wrapper}>     
-                <div className={styles.text}> 형법 제52조(집행유예의 요건) 제1항에 따라 3년 이하의 징역이나 금고 또는 500만 원 이하의 벌금형을 선고할 경우 1년 이상 5년 이하의 기간 형의 집행을 유예할 수 있습니다.
-                    <br/><br/>형의 집행을 유예하시겠습니까?
+                <div className={styles.title}>
+                    형의 집행을 유예하시겠습니까?
                 </div>
+                <div className={styles.subtitle}> 형법 제52조(집행유예의 요건) 제1항에 따라 3년 이하의 징역이나 금고 또는 500만 원 이하의 벌금형을 선고할 경우 1년 이상 5년 이하의 기간 형의 집행을 유예할 수 있습니다.</div>
                  <div className={styles.btnwrapper}>
                     <button 
                         type="button" 
-                        className={cx('button',{selected: probation === 0})} 
+                        className={cx('button',{selected: probation === 1})} 
                         onClick={selectProbation}
                         name='1'>
                         예
                     </button>
                     <button
                         type="button" 
-                        className={cx('button',{selected:probation === 1})} 
+                        className={cx('button',{selected:probation === 0})} 
                         onClick={selectProbation}
                         name='0'>
                         아니오
@@ -36,16 +37,19 @@ class Probation extends Component {
                 </div>
                 {probation === 1 && (
                     <>
-                    <p>집행유예 기간을 선택하세요</p>
+                    <p className={styles.subtxt}>집행유예 기간을 선택하세요</p>
+                    <div className={styles.sliderwrapper}>
                     <Slider
                         min={12}
                         max={60}
                         step={1}
                         format={monthFormat}
                         value={answer3}
+                        labels={{ 1:'1개월', 12: '1년', 24: '2년', 36: '3년', 48:'4년', 60:'5년'}}
                         onChange={sliderChange2}
                         />
-                        <div className='value'>{monthFormat(answer3)}</div>
+                    </div>
+                        <div className={styles.value}>{monthFormat(answer3)}</div>
                     </>
                     
                 )}            

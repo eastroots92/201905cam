@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './App.module.css'
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { Navigation, Heading, Page0, Page1} from './components'
 // import { createRGBcode, sampleintLessThan } from './utils'
 const criminals=[
@@ -17,7 +18,7 @@ const criminals=[
     law:
     `※ 성폭력처벌법 제14조(카메라 등을 이용한 촬영) 제1항 위반으로 
     법정형은 ‘5년 이하의 징역 또는 3천만 원 이하의 벌금’입니다.`,
-    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/a.png'  
+    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/a0.png'  
   },
   { key:1, name:'1', 
     criminal:'B',
@@ -31,7 +32,7 @@ const criminals=[
     law:
     `※ 성폭력처벌법 제14조(카메라 등을 이용한 촬영) 제1항 위반으로 
     법정형은 ‘5년 이하의 징역 또는 3천만 원 이하의 벌금’입니다.`,
-    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/b.png'  
+    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/b0.png'  
   },
   { key:2, name:'2',
     criminal:'C',
@@ -46,7 +47,7 @@ const criminals=[
     law:
     `※ 성폭력처벌법 제14조(카메라 등을 이용한 촬영) 제1항 위반으로 
     법정형은 ‘5년 이하의 징역 또는 3천만 원 이하의 벌금’입니다.`,
-    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/c.png'    },
+    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/c0.png'    },
   { key:3, name:'3', 
     criminal:'D',
     script:
@@ -60,7 +61,7 @@ const criminals=[
     law:
     `※ 성폭력처벌법 제14조(카메라 등을 이용한 촬영) 제1항 위반으로 
     법정형은 ‘5년 이하의 징역 또는 3천만 원 이하의 벌금’입니다.`,
-    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/d.png'   
+    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/d0.png'   
   },
   { key:4, name:'4', 
     criminal:'E',
@@ -75,7 +76,7 @@ const criminals=[
     law:
     `※ 성폭력처벌법 제14조(카메라 등을 이용한 촬영) 제1항, 제2항 위반으로 
     법정형은 ‘5년 이하의 징역 또는 3천만 원 이하의 벌금’입니다.`,
-    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/e.png' 
+    imgurl:'http://mabu.newscloud.sbs.co.kr/2019img/img/e0.png' 
   },
 ]
 class App extends Component {
@@ -85,7 +86,9 @@ class App extends Component {
     selectedSex:null,
     selectedAge:null
   }
-
+  scrolltop = () => {
+    scroll.scrollToTop();
+  }
   selectSex = (event) => {
     const { name } = event.target
     this.setState({selectedSex:Number(name)})
@@ -120,7 +123,6 @@ class App extends Component {
     return (
       <div className={styles.wrapper}>
         <Navigation />
-        {/* <Heading /> */}
         {selectedIndex == null && (
         <Page0 
             selectCriminal={this.selectCriminal}
@@ -132,13 +134,14 @@ class App extends Component {
             selectAge={this.selectAge}
         />
         )}
-        {selectedIndex!== null && (
+        {selectedIndex !== null && (
           <Page1
             criminals={criminals}
             selectedIndex={selectedIndex}
             setInitialStage={this.setInitialStage}
             selectedSex={selectedSex}
             selectedAge={selectedAge}
+            scrolltop={this.scrolltop}
           />     
         )}
       </div>

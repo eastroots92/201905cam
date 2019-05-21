@@ -10,8 +10,8 @@ const Slider1 = ({
 }) => {
     return (
         <>
-        <div className={styles.text}>형량을 선택하세요</div>
-        <div className={styles.subtext}>슬라이드를 이동해 형량을 정할 수 있습니다</div>
+        <div className={styles.text}>형량을 선택하세요<br/>슬라이드를 이동해 형량을 정할 수 있습니다</div>
+        {/* <div className={styles.subtext}></div> */}
         <div className={styles.wrapper}>
                 {answer1 === 0 && (
                     <>
@@ -21,35 +21,10 @@ const Slider1 = ({
                     step={1}
                     format={monthFormat}
                     value={answer2}
+                    labels={{ 1:'1개월', 12: '1년', 24: '2년', 36: '3년', 48:'4년', 60:'5년'}}
                     onChange={sliderChange1}
                     />
-                    <div className={styles.ticks}>
-                        <div className={styles.tick}>
-                            <div className={styles.line}></div>
-                            <div className={styles.year}>1개월</div>
-                        </div>
-                        <div className={styles.tick}>
-                            <div className={styles.line}></div>
-                            <div className={styles.year}>1년</div>
-                        </div>
-                        <div className={styles.tick}>
-                            <div className={styles.line}></div>
-                            <div className={styles.year}>2년</div>
-                        </div>
-                        <div className={styles.tick}>
-                            <div className={styles.line}></div>
-                            <div className={styles.year}>3년</div>
-                        </div>
-                        <div className={styles.tick}>
-                            <div className={styles.line}></div>
-                            <div className={styles.year}>4년</div>
-                        </div>
-                        <div className={styles.tick}>
-                            <div className={styles.line}></div>
-                            <div className={styles.year}>5년</div>
-                        </div>
-                    </div>
-                    <div className='value'>{monthFormat(answer2)}</div>
+                    <div className={styles.value}>{monthFormat(answer2)}</div>
                     </>
                 )}
                 {answer1 === 1 && (
@@ -60,9 +35,10 @@ const Slider1 = ({
                     step={1000000}
                     format={moneyFormat}
                     value={answer2}
+                    labels={{ 1000000:'백만원', 10000000: '천만원', 20000000: '이천만원', 30000000: '삼천만원'}}
                     onChange={sliderChange1}
                     />
-                    <div className='value'>{moneyFormat(answer2)}</div>
+                    <div className={styles.value}>{moneyFormat(answer2)}</div>
                     </>
                 )}
         </div>
