@@ -7,11 +7,11 @@ const criminals=[
   { key:0, name:'0',
     criminal:'A',
     script:
-    `지하철역 출구 계단에서 
-    치마 입은 여성 뒤를 따라 올라가면서 
-    자신의 휴대전화를 이용해 
-    여성의 치마 속 신체 부위를 
-    동영상으로 1회 촬영했습니다.`,
+    `<span>지하철역 출구 계단</span>에서 
+    <span>치마 입은 여성</span> 뒤를 따라 올라가면서 
+    자신의 <span>휴대전화</span>를 이용해 
+    여성의 치마 속 <span>신체 부위</span>를 
+    <span>동영상으로 1회</span> 촬영했습니다.`,
     summary:
     `여성 신체부위
     1회 촬영`,
@@ -24,9 +24,9 @@ const criminals=[
   { key:1, name:'1', 
     criminal:'B',
     script:
-    `지하철 환승통로 에스컬레이터를 타고가며 
-    자신의 휴대전화로 앞서 가는 여성의 다리 부위를 찍는 등 
-    50회에 걸쳐 사진과 동영상을 촬영했습니다.`,
+    `<span>지하철 환승통로 에스컬레이터</span>를 타고가며 
+    자신의 <span>휴대전화</span>로 앞서 가는 여성의 <span>다리 부위</span>를 찍는 등 
+    <span>50회에 걸쳐 사진과 동영상</span>을 촬영했습니다.`,
     summary:
     `여성 신체부위
     50회 촬영`,
@@ -39,10 +39,10 @@ const criminals=[
   { key:2, name:'2',
     criminal:'C',
     script:
-    `연인 관계인 여성과 모텔에 들어간 뒤 
-    자신과 여성이 성관계 하는 장면을 
+    `<span>연인</span> 관계인 여성과 <span>모텔</span>에 들어간 뒤 
+    자신과 여성이 <span>성관계 하는 장면</span>을 
     여성의 동의를 받지 않은 채 
-    몰래 자신의 휴대전화로 촬영했습니다.`,
+    몰래 자신의 <span>휴대전화</span>로 촬영했습니다.`,
     summary:
     `성관계 동영상
     몰래 촬영`, 
@@ -55,10 +55,10 @@ const criminals=[
   { key:3, name:'3', 
     criminal:'D',
     script:
-    `여성 화장실에 
-    소형 카메라를 몰래 설치해 놓은 뒤 
+    `<span>여성 화장실</span>에 
+    <span>소형 카메라</span>를 몰래 설치해 놓은 뒤 
     그 화장실에 들어온 여성들의 
-    용변 보는 장면을 몰래 촬영했습니다. `,
+    <span>용변 보는 장면</span>을 몰래 촬영했습니다. `,
     summary:
     `소형 카메라로
     몰래 촬영`,
@@ -71,10 +71,10 @@ const criminals=[
   { key:4, name:'4', 
     criminal:'E',
     script:
-    `자신의 집에서 
-    여자 친구의 동의를 받지 않은 채 
-    몰래 나체 사진을 촬영한 뒤 
-    그 사진을 친구들과 함께 있는 메신저 단체 채팅방에 공유했습니다.`,
+    `<span>자신의 집</span>에서 
+    <span>여자 친구</span>의 동의를 받지 않은 채 
+    몰래 <span>나체 사진</span>을 촬영한 뒤 
+    그 사진을 친구들과 함께 있는 메신저 <span>단체 채팅방에 공유</span>했습니다.`,
     summary:
     `불법 촬영물
     유포`,
@@ -93,7 +93,11 @@ class App extends Component {
     selectedAge:null
   }
   scrolltop = () => {
-    scroll.scrollToTop();
+    scroll.scrollToTop({
+      duration:1000,
+      delay:0,
+      smooth:'easeInOutCubic'
+    });
   }
   selectSex = (event) => {
     const { name } = event.target
@@ -108,6 +112,10 @@ class App extends Component {
   selectCriminal = (event) => {
     const { name } = event.target
     this.setState({selectedIndex:Number(name)})
+    scroll.scrollToTop({
+      duration: 0,
+      delay: 0,
+    })
   }
 
   setNextStage = () => {

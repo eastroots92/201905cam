@@ -22,13 +22,17 @@ class Page1 extends Component {
       comment:'',
       datapost:false,
       type:null,
-      slider1flag:0,
+      slider1flag:null,
       slider2flag:0
     }
   }
 // scroll
   scrollToTop = () => {
-    scroll.scrollToTop()
+    scroll.scrollToTop({
+      duration:300,
+      delay:0,
+      smooth:true,
+    })
   }
 
 
@@ -58,6 +62,11 @@ class Page1 extends Component {
       slider1flag:0,
       slider2flag:0
     })
+    scroll.scrollTo(550, {
+      duration:300,
+      delay:0,
+      smooth:'easeInOutCubic',
+    });
   }
 
   sliderChange1 = (value) => {
@@ -99,6 +108,11 @@ class Page1 extends Component {
       slider2flag:flag2,
       answer3:12
     })
+    scroll.scrollTo(1100, {
+      duration:300,
+      delay:0,
+      smooth:'easeInOutCubic',
+    });
   }
   sliderChange2 = (value) => {
     this.setState({
@@ -112,7 +126,20 @@ class Page1 extends Component {
       comment:e.target.value,
     })
   }
-
+  scrolltoPrb =()=>{
+      scroll.scrollTo(800, {
+      duration:300,
+      delay:0,
+      smooth:'easeInOutCubic',
+    });
+  }
+  scrolltoJudge =()=>{
+    scroll.scrollTo(1500, {
+    duration:300,
+    delay:0,
+    smooth:'easeInOutCubic',
+  });
+}
   onSubmit = (event) => {
     event.preventDefault();
     const {answer1, answer2, answer3, probation, comment} = this.state
@@ -195,33 +222,40 @@ class Page1 extends Component {
               />
               {answer1 !== null &&(
                   <Slider1
+                  scrolltoPrb={this.scrolltoPrb}
                   sliderChange1={this.sliderChange1}
                   answer1={answer1}
                   answer2={answer2}
                 />
               )}
               </div>
-              <div className={styles.probationsection}>
-             {slider1flag === 1 &&(             
+              
+              {answer2!==null &&(
+                <div className={styles.probationsection}>
                <Probation
                 selectProbation={this.selectProbation}
                 sliderChange1={this.sliderChange1}
                 sliderChange2={this.sliderChange2}
+                scrolltoJudge={this.scrolltoJudge}
                 probation={probation}
                 answer1={answer1}
                 answer2={answer2}
                 answer3={answer3}
+                slider1flag={slider1flag}
                 slider2flag={slider2flag}
-               />             
-             )} 
-             </div>
+               />              
+             </div>)
+            }         
+              
              <div className={styles.judgesection}>        
              {slider2flag === 1 &&(
+               <>                    
               <Judging
                 commentChange={this.commentChange}
                 comment={comment}
                 onSubmit={this.onSubmit}
               />
+              </>
              )}
              </div>  
           </div>

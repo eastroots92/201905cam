@@ -3,6 +3,7 @@ import axios from 'axios'
 import Chart from 'react-apexcharts'
 import {url} from '../const'
 import { getAverage, filtering } from '../../utils'
+import head from '../../assets/img/pang.png'
 import styles from './Page2.module.css'
 import Myresult from './Myresult'
 import Otherresults from './Otherresults'
@@ -93,7 +94,10 @@ class Page2 extends Component {
 
     return (
       <>
+      <div className={styles.container}>
+       <div className={styles.head}><img src={head}/></div>
       <div className={styles.wrapper}>
+     
         {/* <div className={styles.subtitle}>내가 선택한 형벌 분석 보기</div> */}
         <Myresult 
           type={type}
@@ -127,6 +131,7 @@ class Page2 extends Component {
         />
         <Articles />
 
+      </div>
       </div>
       </>
     );

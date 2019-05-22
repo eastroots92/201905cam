@@ -1,14 +1,39 @@
 .judgebtn{
-    background-color:#a5e5d9;
-    /* border-bottom:1px solid #a5e5d9;
-    box-shadow: 0 0 2px #fff, 0 0 4px #a5e5d9, 0 0 10px #a5e5d9; */
-    padding:10px;
+    width:50%;
+    border:1px solid #a5e5d9;
+    border-radius: 20px;
+    color:#a5e5d9;
+    padding:10px 0;
+    margin:0 20px;
+    font-size: 21px;
     cursor: pointer;
+    box-shadow: none;
+    transition: all .2s;
+}
+.judgebtn:hover{
+    font-weight: 900;
+    box-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #647971, 0 0 16px #647971, 0 0 20px #647971;
 }
 .wrapper{
     margin-bottom:100px;
+    -webkit-animation-name: appear; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: appear;
+    animation-duration: 1s;
 }
+@-webkit-keyframes appear {
+    from {opacity:0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes appear {
+    from {opacity:0;}
+    to {opacity: 1;}
+  }
 .title{
+    border-top:1px solid #888;
+    border-style: dotted;
+    padding-top:50px;
     font-weight: 800;
 }
 .comment{
@@ -20,6 +45,11 @@
     margin:50px 0;
     background:transparent;
     border:none;
-    border-bottom:1px solid #a5e5d9;
+    border-bottom:2px solid #a5e5d9;
     /* box-shadow: 0 0 2px #fff, 0 0 4px #a5e5d9, 0 0 10px #a5e5d9; */
+}
+.subtitle{
+margin-top:20px;
+  color:#ddd;
+  font-size:12px;
 }

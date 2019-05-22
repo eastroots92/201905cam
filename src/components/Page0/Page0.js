@@ -40,6 +40,7 @@ class Page0 extends Component {
         />
         <div className={styles.criminals}>   
           <Criminals 
+            scrollToTop={this.scrollToTop}
             criminals={criminals} 
             selectedIndex={selectedIndex}
             selectCriminal={selectCriminal}

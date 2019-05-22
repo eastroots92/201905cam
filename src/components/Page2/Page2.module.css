@@ -1,11 +1,18 @@
 .wrapper {
-    margin:50px auto;
-    width: 700px;
+    margin-top:-43px;
     padding:0 30px;
-    background:#eee;
+    background:#edf0ea;
     color: black;
     text-align: center;
   }
+.head{
+  width:100%;
+}
+.container{
+  width: 700px;
+  margin:50px auto;
+  overflow: hidden;
+}
 .subtitle{
   margin-bottom:20px;
   font-weight: bold;

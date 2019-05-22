@@ -12,8 +12,7 @@
     "react-dom": "^16.8.6",
     "react-rangeslider": "^2.2.0",
     "react-scripts": "2.1.8",
-    "react-scroll": "^1.7.11",
-    "react-transition-group": "^4.0.1"
+    "react-scroll": "^1.7.11"
   },
   "scripts": {
     "start": "react-scripts start",

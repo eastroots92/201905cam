@@ -1,24 +1,44 @@
 .wrapper{
-    margin:50px 0;
+    margin:50px 0 80px 0;
     width:100%;
     display:flex;
     justify-content: center;
     align-items: center;
+    -webkit-animation-name: appear; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration:1s; /* Safari 4.0 - 8.0 */
+    animation-name: appear;
+    animation-duration: 1s;
 }
+@-webkit-keyframes appear {
+    from {opacity:0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes appear {
+    from {opacity:0;}
+    to {opacity: 1;}
+  }
 .wrapper button{
     flex:1;
-    background-color:lightcyan;
+    border:1px solid #a5e5d9;
+    border-radius: 20px;
+    color:#a5e5d9;
     padding:10px 0;
-    margin:0 5px;
+    margin:0 20px;
+    font-size: 21px;
     cursor: pointer;
+    box-shadow: none;
+    transition: all .2s;
 }
 .wrapper button:hover{
-    background-color:cyan;
+    font-weight: 900;
+    box-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #647971, 0 0 16px #647971, 0 0 20px #647971;
 }
 .title{
     margin-top:70px;
     font-weight: 800;
 }
 .button.selected{
-    background-color:cyan;
+    font-weight: 900;
+    box-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #647971, 0 0 16px #647971, 0 0 20px #647971;
 }

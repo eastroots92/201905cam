@@ -6,38 +6,20 @@
     text-align: center;
   }
   .title{
-    margin:50px 0;
-    font-size:24px;
-  }
-  .button {
-    min-width: 125px;
-    padding: 7px;
-    border: 2px solid white;
-    border-radius: 5px;
-    color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    outline: none;
-    cursor: pointer;
-  }
-  
-  .button:first-of-type {
-    margin-top: 50px;
+    margin:50px 0 30px 0;
+    font-weight: 800;
   }
 
   .answer1section{
     margin-top:30px;
-    border-bottom:1px solid #666;
     padding:0 30px;
   }
   .probationsection{
-    margin-top:30px;
-    border-bottom:1px solid #666;
+    margin-top:80px;
     padding:0 30px;
   }
   .judgesection{
-    margin-top:30px;
+    margin-top:80px;
     padding:0 30px;
 
   }

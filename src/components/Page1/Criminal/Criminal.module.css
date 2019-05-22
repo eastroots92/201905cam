@@ -1,23 +1,79 @@
 .wrapper{
     width:100%;
-    display:flex;
-    justify-content:center;
-    align-items: center; 
-    background:#eee;
+    height:430px;
+    background-image: url('../../../assets/img/back1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-animation-name: appear; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.2s; /* Safari 4.0 - 8.0 */
+    animation-name: appear;
+    animation-duration: 0.2s;
+    animation-timing-function:ease;
 }
+@-webkit-keyframes appear {
+    from {
+        transform:scale(0);
+        opacity:.3;
+    }
+    to {
+        transform:scale(1);
+        opacity:1;
+    }
+  }
+  
+  @keyframes appear {
+    from {
+        transform:scale(0);
+        opacity:.3;
+    }
+    to {
+        transform:scale(1);
+        opacity:1;
+    }
+  }
 .criminalimg{
-    border:5px solid #a5e5d9;
+    float:left;
+    width:50%;
+    height:100%;
+    position: relative;
+}
+.criminalimg .photo{
+    width: 60%;
+    margin:40px auto 0 auto;
+}
+.criminalimg .clip{
+    width:40px;
+    left:20%;
+    top:2px;
+    position: absolute;
 }
 .criminalinfo{
-   color:#000;
+    float:left;
+    width:50%;
+    height:100%;
+    color:#000;
     word-break: keep-all;
-    flex:1;
     line-height:170%;
-    padding: 0 50px;
+    position: relative;
 }
 .script{
+    position: absolute;
+    width:100%;
+    padding:0 70px;
     font-size:18px;
+    line-height: 170%;
+    top:45%;
+    transform:translateY(-50%);
+}
+.script span{
+    background-color:rgba(38,201,211,.2);
 }
 .law{
-   color:#999;
+    font-size:12px;
+    line-height:15px;
+    position: absolute;
+    bottom:40px;
+    width:100%;
+    padding:0 70px;
+    color:#333;
 }

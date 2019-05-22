@@ -6,6 +6,7 @@ const Judging = ({onSubmit, comment,commentChange}) => {
         <div className={styles.wrapper}>
             <div>
                 <div className={styles.title}>피고인에게 마지막 한 마디</div>
+                <div className={styles.subtitle}>최종 판결문에 반영됩니다</div>
                 <input 
                 className={styles.comment}
                 type="text"

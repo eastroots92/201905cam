@@ -6,11 +6,13 @@ import Slider from 'react-rangeslider'
 // import 'react-rangeslider/lib/index.css'
 
 const Slider1 = ({
-    answer1,answer2,sliderChange1,
+    answer1,answer2,sliderChange1,scrolltoPrb
 }) => {
     return (
         <>
-        <div className={styles.text}>형량을 선택하세요<br/>슬라이드를 이동해 형량을 정할 수 있습니다</div>
+        <div className={styles.container}>
+        <div className={styles.title}>형량을 선택하세요</div>
+        <div className={styles.subtitle}>슬라이드를 이동해 형량을 정할 수 있습니다</div>
         {/* <div className={styles.subtext}></div> */}
         <div className={styles.wrapper}>
                 {answer1 === 0 && (
@@ -22,7 +24,8 @@ const Slider1 = ({
                     format={monthFormat}
                     value={answer2}
                     labels={{ 1:'1개월', 12: '1년', 24: '2년', 36: '3년', 48:'4년', 60:'5년'}}
-                    onChange={sliderChange1}
+                    onChange={sliderChange1}       
+                    onChangeComplete={scrolltoPrb}
                     />
                     <div className={styles.value}>{monthFormat(answer2)}</div>
                     </>
@@ -37,10 +40,12 @@ const Slider1 = ({
                     value={answer2}
                     labels={{ 1000000:'백만원', 10000000: '천만원', 20000000: '이천만원', 30000000: '삼천만원'}}
                     onChange={sliderChange1}
+                    onChangeComplete={scrolltoPrb}
                     />
                     <div className={styles.value}>{moneyFormat(answer2)}</div>
                     </>
                 )}
+        </div>
         </div>
         </>
     );
