@@ -39,7 +39,9 @@ const Myresult = ({
         <div className={styles.wrapper}>
             <div className={styles.result}>
                 <div className={styles.section}>
-                    <div className={styles.title}>판  결</div>
+                    <div className={styles.title}>
+                        대한민국법원<br/>
+                        판  결</div>
                     <div className={styles.content}>
                         <ul className={styles.contentleft}>
                             <li>사&nbsp;&nbsp;&nbsp;건</li>

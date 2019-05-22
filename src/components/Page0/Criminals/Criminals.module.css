@@ -8,7 +8,7 @@
     justify-content: space-between;
 }
 .criminal{
-    overflow:hidden;
+    /* overflow:hidden; */
     flex:1;
     height:300px;
     margin: 0 5px;
@@ -17,17 +17,43 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x:80%; 
+    border:2px solid #fff;
+    opacity:0.3;
+    position: relative;
 }
 .criminal:hover{
+    opacity:1;
     background-position-x:100%;
-    border:1px solid #a5e5d9;
-    box-shadow: 0 0 2px #fff, 0 0 8px #a5e5d9, 0 0 20px #a5e5d9;
+    border:2px solid #a5e5d9;
+    box-shadow: 0 0 2px #fff, 0 0 8px #a5e5d9, 0 0 30px #a5e5d9;
+}
+.criminal:hover .summarybox{
+    opacity: 1;
 }
 .button{
     width:100%;
     height:100%;
     outline:none;
     cursor:pointer;
+}
+.summarybox{
+    opacity:1;
+    z-index: 999;
+    opacity:0;
+    padding:30px;
+    word-break: keep-all;
+    line-height:150%;
+    text-align: center;
+    color:#000;
+    position: relative;
+    top:-100px;
+    left:-10px;
+    width:150%;
+    height:200px;
+    transform: rotate(-5deg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('http://mabu.newscloud.sbs.co.kr/2019img/img/summary.png')
 }
 .criminal.selected{
     /* transform:scale(50); */

@@ -62,10 +62,10 @@ class Page2 extends Component {
 
     axios.get(`${url}/${selectedIndex}`)
       .then(res => {
-        const getdata = res.data;
+        const getdata = res.data
         this.setState({
           getdata: getdata
-        });
+        })
       }).catch( error => { console.log('failed', error) })
   }
 
@@ -122,40 +122,7 @@ class Page2 extends Component {
           selectedIndex={selectedIndex}   
           mabuCount={mabuCount} 
         />
-        {/* <div className={styles.subtitle}>내가 선택하지 않은 형벌 분석 보기</div>
-        <Otherresults 
-          type={alltype[0]}
-          selectedIndex={selectedIndex}
-          getdata={getdata}
-          getAverage={getAverage}
-          filtering={filtering}
-          mabuAvg={mabuAvg}
-          typename={typename}
-          typefilter={typefilter}
-        />
-        <Otherresults 
-          type={alltype[1]}
-          selectedIndex={selectedIndex}
-          getdata={getdata}
-          getAverage={getAverage}
-          filtering={filtering}
-          mabuAvg={mabuAvg}
-          typename={typename}
-          typefilter={typefilter}
-        />
-        <Otherresults 
-          type={alltype[2]}
-          selectedIndex={selectedIndex}
-          getdata={getdata}
-          getAverage={getAverage}
-          filtering={filtering}
-          mabuAvg={mabuAvg}
-          typename={typename}
-          typefilter={typefilter}
-        /> */}
-        {/* <Analysis /> */}
         <Nextgame 
-          // setInitialStage={setInitialStage}
           setInitialStagePage2={this.setInitialStagePage2}
         />
         <Articles />

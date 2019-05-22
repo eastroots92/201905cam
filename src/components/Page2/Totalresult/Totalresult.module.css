@@ -1,3 +1,11 @@
+.wrapper{
+    margin-top:20px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
 .count{
     /* border:1px solid #ff0; */
     padding:20px;
@@ -6,4 +14,7 @@
 .subtitle{
     font-weight: bold;
     margin-bottom:20px;
+}
+.total{
+    margin:10px 0;
 }

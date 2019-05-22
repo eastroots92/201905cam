@@ -7,7 +7,7 @@ const Criminal= ({criminals, selectedIndex}) => {
     return (
         <div className={styles.wrapper}>
                 <div className={styles.criminalimg}>
-                    <img src={criminals[selectedIndex].imgurl} alt="" width="200"/>
+                    <img src={criminals[selectedIndex].imgurlc} alt="" width="200"/>
                 </div>               
                 <div className={styles.criminalinfo}>
                     <div className={styles.script}>{criminals[selectedIndex].script}</div>     
