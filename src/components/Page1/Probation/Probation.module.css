@@ -47,7 +47,7 @@
     border-radius: 20px;
     color:#a5e5d9;
     padding:10px 0;
-    margin:0 20px;
+    margin:0 10px;
     font-size: 21px;
     cursor: pointer;
     box-shadow: none;
@@ -126,4 +126,21 @@
     font-size:26px;
     font-weight: 800;
     margin-top:80px;
+  }
+
+  
+  @media screen and (max-width: 700px) {
+    .subtitle{
+        word-break: keep-all;
+        line-height: 150%;
+        margin-top:20px;
+        padding:0 10px;
+        color:#ddd;
+        font-size:14px;
+    }
+    .subtitle span{
+        font-weight: 800;
+        color:#a5e5d9;
+        font-size:16px;
+    }
   }

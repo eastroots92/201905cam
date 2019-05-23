@@ -53,3 +53,10 @@ margin-top:20px;
   color:#ddd;
   font-size:12px;
 }
+
+@media screen and (max-width: 700px) {
+  .subtitle{
+      padding:0 10px;
+      font-size:14px;
+  }
+}

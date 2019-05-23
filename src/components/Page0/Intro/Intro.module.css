@@ -55,9 +55,10 @@ color:#1dcad3;
         width:90%;
         padding:5px 15px;
         margin:0 10px;
+        white-space: nowrap;
     }
     .selectage li{
-        width:30%;
+        width:33%;
         margin-bottom:15px;
     }
   }
