@@ -63,7 +63,7 @@ class Probation extends Component {
                         step={1}
                         format={monthFormat}
                         value={answer3}
-                        labels={{ 1:'1개월', 12: '1년', 24: '2년', 36: '3년', 48:'4년', 60:'5년'}}
+                        labels={{ 12: '1년', 24: '2년', 36: '3년', 48:'4년', 60:'5년'}}
                         onChange={sliderChange2}
                         onChangeComplete={ scrolltoJudge}
                         />

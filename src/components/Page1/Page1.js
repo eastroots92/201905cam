@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import * as Scroll from 'react-scroll'
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import {url} from '../const'
 import styles from './Page1.module.css'
@@ -31,10 +30,16 @@ class Page1 extends Component {
     scroll.scrollToTop({
       duration:300,
       delay:0,
-      smooth:true,
+      smooth:'easeInOutCubic',
     })
   }
-
+  scrollToBottom = () => {
+    scroll.scrollTo(1000,{
+      duration:800,
+      delay:0,
+      smooth:'easeInOutCubic',
+    })
+  }
 
   setInitialStagePage1 = () => {
     this.props.setInitialStage()
@@ -63,7 +68,7 @@ class Page1 extends Component {
       slider2flag:0
     })
     scroll.scrollTo(550, {
-      duration:300,
+      duration:600,
       delay:0,
       smooth:'easeInOutCubic',
     });
@@ -109,7 +114,7 @@ class Page1 extends Component {
       answer3:12
     })
     scroll.scrollTo(1100, {
-      duration:300,
+      duration:600,
       delay:0,
       smooth:'easeInOutCubic',
     });
@@ -128,14 +133,14 @@ class Page1 extends Component {
   }
   scrolltoPrb =()=>{
       scroll.scrollTo(800, {
-      duration:300,
+      duration:600,
       delay:0,
       smooth:'easeInOutCubic',
     });
   }
   scrolltoJudge =()=>{
     scroll.scrollTo(1500, {
-    duration:300,
+    duration:600,
     delay:0,
     smooth:'easeInOutCubic',
   });
@@ -203,7 +208,7 @@ class Page1 extends Component {
   }
 
   render() {
-    const { criminals, selectedIndex, scrolltop }=this.props
+    const { criminals, selectedIndex, scrolltop, startscroll }=this.props
     const { answer1, answer2, answer3, probation, datapost, type, comment, slider1flag, slider2flag }=this.state
     return (
         <>
@@ -262,6 +267,7 @@ class Page1 extends Component {
         )}
         {datapost===true &&(
           <Page2
+            scrollToBottom={this.scrollToBottom}
             type={type}
             criminals={criminals}
             selectedIndex={selectedIndex}

@@ -99,6 +99,13 @@ class App extends Component {
       smooth:'easeInOutCubic'
     });
   }
+  startscroll = () => {
+    scroller.scrollTo('intro', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutCubic'
+    })
+  }
   selectSex = (event) => {
     const { name } = event.target
     this.setState({selectedSex:Number(name)})
@@ -146,6 +153,7 @@ class App extends Component {
             selectedAge={selectedAge}
             selectSex={this.selectSex}
             selectAge={this.selectAge}
+            startscroll={this.startscroll}
         />
         )}
         {selectedIndex !== null && (
@@ -156,6 +164,7 @@ class App extends Component {
             selectedSex={selectedSex}
             selectedAge={selectedAge}
             scrolltop={this.scrolltop}
+            startscroll={this.startscroll}
           />     
         )}
       </div>

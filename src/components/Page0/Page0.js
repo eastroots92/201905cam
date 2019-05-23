@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import styles from './Page0.module.css'
 import Intro from './Intro'
 import Criminals from './Criminals'
@@ -8,13 +7,7 @@ import Heading from './Heading'
 
 
 class Page0 extends Component {
-  startscroll = () => {
-    scroller.scrollTo('intro', {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutCubic'
-    })
-  }
+
 
   render() {
     const { 
@@ -24,12 +17,13 @@ class Page0 extends Component {
       selectedSex, 
       selectedAge,
       selectSex,
-      selectAge
+      selectAge,
+      startscroll
     } = this.props
     return (
       <>
       <Heading
-        startscroll={this.startscroll}
+        startscroll={startscroll}
       />
       <div className={styles.wrapper} name='intro'>
         <Intro 

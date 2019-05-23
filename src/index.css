@@ -98,3 +98,21 @@ body {
   width:100%;
 }
 *,button:focus {outline:0;}
+.bartooltip{
+  padding:10px;
+}
+.bartooltip div{
+margin-bottom:8px;
+}
+.bartooltip div:last-child{
+  margin-bottom:0;
+  }
+.bartooltip .tooltiptitle{
+  font-weight: 800;
+}
+.apexcharts-canvas{
+  margin-top:-30px;
+}
+.apexcharts-legend-marker{
+  cursor:default !important;
+}

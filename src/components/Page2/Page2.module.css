@@ -17,3 +17,21 @@
   margin-bottom:20px;
   font-weight: bold;
 }
+.footer{
+  padding:20px 0 80px 0;
+  text-align:center;
+  color:#999;
+  line-height: 150%;
+}
+.team{
+  margin-bottom:10px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 700px) {
+  .container{
+    width: 95%;
+    margin:50px auto;
+    overflow: hidden;
+  }
+}

@@ -15,6 +15,7 @@ const Criminal= ({criminals, selectedIndex}) => {
                     <div className={styles.script} dangerouslySetInnerHTML={{__html: criminals[selectedIndex].script}}></div>     
                     <div className={styles.law}> {criminals[selectedIndex].law}</div>
                </div>
+               {/* <div className={styles.mlaw}> {criminals[selectedIndex].law}</div> */}
         </div>
     );
 };

@@ -24,6 +24,7 @@ const Myresult = ({
     let myavgResult = filtering(getdata,...typefilter[type])
     let myavgResultValue=getAverage(myavgResult.map(d=>d.answer2))
     let myavgProbation=0; 
+    
     if(probation===1){
         myavgProbation=getAverage(myavgResult.map(d=>d.answer3))
     }
@@ -60,10 +61,10 @@ const Myresult = ({
                 <div className={styles.section}>
                     <div className={styles.title}>주  문</div>
                         <div className={styles.myresult}>
-                            피고인을 {typename[type]}&nbsp;{value}에 처한다.<br/>
+                            피고인을 <span> {typename[type]}&nbsp;{value}</span>에 처한다.<br/>
                             {answer3 > 0 &&(
                                 <>
-                                다만, 이 판결확정일부터 {monthFormat(answer3)}간 위 형의 집행을 유예한다.
+                                다만, 이 판결확정일부터 <span> {monthFormat(answer3)}</span>간 위 형의 집행을 유예한다.
                                 </>
                             )} 
                         </div>

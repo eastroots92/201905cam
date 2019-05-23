@@ -44,7 +44,7 @@
 .criminalimg .clip{
     width:40px;
     left:20%;
-    top:2px;
+    top:28px;
     position: absolute;
 }
 .criminalinfo{
@@ -75,5 +75,58 @@
     bottom:40px;
     width:100%;
     padding:0 70px;
-    color:#333;
+    color:#666;
+}
+
+@media screen and (max-width: 700px) {
+    .wrapper{
+        width:100%;
+        height:auto;
+        background-image: none;
+    }
+
+    .criminalimg{
+        float:none;
+        width:300px;
+        margin:0 auto;
+        height:400px;
+        overflow:hidden;
+        position: relative;
+        border:5px solid #eee;
+        margin-bottom:20px;
+        
+    }
+    .criminalimg .photo{
+        transform:translateY(-60px);
+        width: 100%;
+    }
+    .criminalimg .clip{
+       display: none;
+    }
+    .criminalinfo{
+        float:none;
+        width:100%;
+        height:auto;
+        color:#fff;
+        word-break: keep-all;
+        line-height:170%;
+        position: static;
+    }
+    .script{
+        position: static;
+        width:100%;
+        transform:none;
+        margin-bottom:20px;
+    }
+    .script span{
+        background-color:rgba(38,201,211,.4);
+    }
+    .law{
+        font-size:14px;
+        line-height:150%;
+        position: static;
+        width:100%;
+        padding:0 70px;
+        color:#666;
+    }
 }

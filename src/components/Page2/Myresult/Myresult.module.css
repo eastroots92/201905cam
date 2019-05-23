@@ -6,6 +6,11 @@
     text-align:left;
     margin-top:20px;
     line-height:170%;
+    font-size: 21px;
+}
+.myresult span{
+    font-weight: 800;
+    color:#333;
 }
 .title{
     margin:30px 0;

@@ -7,9 +7,7 @@ const sex = [
     {key:0,
      val:'남성'},
     {key:1,
-    val:'여성'},
-    {key:2,
-    val:'그 외'}
+    val:'여성'}
 ]
 const age = [
     {key:0,
@@ -35,6 +33,7 @@ const Intro = ({
     return (
         <div className={styles.wrapper}>
         당신은
+        <div className={styles.btncontainer}>
             <ul className={styles.selectage}>
             {age.map(a =>(
                 <li 
@@ -69,9 +68,10 @@ const Intro = ({
                 </li>
             ))}
             </ul>
+            </div>
             <div className={styles.userinfo}>
                 '시민판사' 입니다.<br/>
-                오늘 당신은 불법촬영 사건을 판결해야합니다.<br/>
+                오늘 당신은 <span className={styles.impact}>불법촬영</span> 사건을 판결해야합니다.<br/>
                 아래 피고인 5명에게 당신은 어떤 판결을 내리시겠습니까?
             </div>
         </div>

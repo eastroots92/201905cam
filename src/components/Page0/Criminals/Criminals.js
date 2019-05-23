@@ -14,7 +14,10 @@ const Criminals = ({criminals, selectedIndex, selectCriminal}) => {
                 className={cx('criminal',{selected: selectedIndex === criminal.key})} 
                 style={{backgroundImage: 
                     "url("+criminal.imgurlc+")"}}
-                >
+                ><div className={styles.summarybox}>
+                       피고인: {criminal.criminal}<br/>
+                        특징: {criminal.summary}
+                   </div>
                    <button 
                     type="button" 
                     className={cx('button',{selected: selectedIndex === criminal.key})} 
@@ -22,10 +25,7 @@ const Criminals = ({criminals, selectedIndex, selectCriminal}) => {
                     name={criminal.key}
                    >
                    </button>
-                   <div className={styles.summarybox}>
-                       피고인: {criminal.criminal}<br/>
-                        특징: {criminal.summary}
-                   </div>
+                   
                </li>
            ))}
         </ul>

@@ -18,3 +18,11 @@
 .total{
     margin:10px 0;
 }
+.total span{
+    font-weight: 800;
+    font-size:18px;
+    color:#333;
+}
+.mabuchart{
+    margin-top:80px;
+  }
