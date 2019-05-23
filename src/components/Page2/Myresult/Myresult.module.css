@@ -18,9 +18,11 @@
     font-weight: 800;
     line-height:180%;
     letter-spacing:1em;
+    white-space: nowrap;
 }
 .content{
     display:flex;
+    white-space: nowrap;
 }
 .content ul li{
     margin-bottom:20px;

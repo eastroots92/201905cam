@@ -18,7 +18,8 @@ const moneyFormat = (number) => {
         if(!resultArray[i]) continue;
         resultString = String(resultArray[i]) + unitWords[i] + ' ' + resultString;
     }
-    return resultString+'원';
+    if(resultString<100000){return resultString+'만 원';}
+    else return resultString+'원';
 }
 
 export default moneyFormat

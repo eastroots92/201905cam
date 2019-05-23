@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "aos": "^2.3.4",
     "apexcharts": "^3.6.12",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",

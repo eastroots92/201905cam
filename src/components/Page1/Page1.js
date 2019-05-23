@@ -37,7 +37,7 @@ class Page1 extends Component {
     scroll.scrollToBottom({
       duration:800,
       delay:0,
-      offset:-1000,
+      offset:0,
       smooth:'easeInOutCubic',
     })
   }
@@ -58,6 +58,12 @@ class Page1 extends Component {
   } 
 //징역형:벌금형
   selectPenalty = (event) => {
+    let scroll1
+    if (window.innerWidth<700){
+      scroll1=650;
+    }else{
+      scroll1=550;
+    }
     let penalty
     const { name } = event.target
     if(name === '0'){penalty = 1}
@@ -68,9 +74,9 @@ class Page1 extends Component {
       slider1flag:0,
       slider2flag:0
     })
-    scroll.scrollTo(550, {
+    scroll.scrollTo(scroll1, {
       duration:600,
-      delay:0,
+      delay:200,
       smooth:'easeInOutCubic',
     });
   }
@@ -114,11 +120,11 @@ class Page1 extends Component {
       slider2flag:flag2,
       answer3:12
     })
-    scroll.scrollTo(1100, {
-      duration:600,
+    scroll.scrollToBottom({
+      duration:1000,
       delay:0,
       smooth:'easeInOutCubic',
-    });
+    })
   }
   sliderChange2 = (value) => {
     this.setState({
@@ -133,18 +139,20 @@ class Page1 extends Component {
     })
   }
   scrolltoPrb =()=>{
-      scroll.scrollTo(800, {
-      duration:600,
+    scroll.scrollToBottom({
+      duration:1000,
       delay:0,
+      offset:0,
       smooth:'easeInOutCubic',
-    });
+    })
   }
   scrolltoJudge =()=>{
-    scroll.scrollTo(1500, {
-    duration:600,
-    delay:0,
-    smooth:'easeInOutCubic',
-  });
+    scroll.scrollToBottom({
+      duration:1000,
+      delay:0,
+      offset:0,
+      smooth:'easeInOutCubic',
+    })
 }
   onSubmit = (event) => {
     event.preventDefault();

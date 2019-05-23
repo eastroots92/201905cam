@@ -28,7 +28,7 @@
   @media screen and (max-width: 700px) {
     .wrapper {
       width: 100%;
-      padding:0 10px 100px 10px;
+      padding:0 10px 0px 10px;
     }
     .answer1section{
       clear:both;}

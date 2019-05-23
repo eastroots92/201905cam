@@ -270,14 +270,14 @@ class Totalresult extends Component {
               if (seriesIndex===0){
                 return '<div class="bartooltip">' +
                 '<div ><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
-                '<div> <span class="tooltipsub">평균형량: </span>' + monthFormat(type0avg.toFixed(0)) + '</div>'+
+                '<div> <span class="tooltipsub">평균형량: </span>' + monthFormat(type0avg.toFixed(1)) + '</div>'+
                 '</div>'
               }
               else if (seriesIndex===1){
                 return '<div class="bartooltip">' +
                 '<div ><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
-                '<div> <span class="tooltipsub">평균형량: </span>' + monthFormat(type1avg.toFixed(0)) + '</div>'+
-                '<div><span class="tooltipsub">집행유예 평균형량: </span>' + monthFormat(type1avgprobation.toFixed(0)) + '</div>'+
+                '<div> <span class="tooltipsub">평균형량: </span>' + monthFormat(type1avg.toFixed(1)) + '</div>'+
+                '<div><span class="tooltipsub">집행유예 평균형량: </span>' + monthFormat(type1avgprobation.toFixed(1)) + '</div>'+
                 '</div>'
               }
               else if (seriesIndex===2){
@@ -290,7 +290,7 @@ class Totalresult extends Component {
                 return '<div class="bartooltip">' +
                 '<div ><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
                 '<div> <span class="tooltipsub">평균형량: </span>' + moneyFormat(type3avg.toFixed(0)) + '</div>'+
-                '<div><span class="tooltipsub">집행유예 평균형량: </span>' + moneyFormat(type3avgprobation.toFixed(0)) + '</div>'+
+                '<div><span class="tooltipsub">집행유예 평균형량: </span>' + monthFormat(type3avgprobation.toFixed(1)) + '</div>'+
                 '</div>'
               }
 

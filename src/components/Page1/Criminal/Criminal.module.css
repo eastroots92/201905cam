@@ -66,6 +66,7 @@
     transform:translateY(-50%);
 }
 .script span{
+    font-weight: 800;
     background-color:rgba(38,201,211,.2);
 }
 .law{
@@ -92,7 +93,7 @@
         height:400px;
         overflow:hidden;
         position: relative;
-        border:5px solid #eee;
+        box-shadow: 0 0 2px #fff, 0 0 4px #a5e5d9, 0 0 10px #a5e5d9;
         margin-bottom:20px;
         
     }
