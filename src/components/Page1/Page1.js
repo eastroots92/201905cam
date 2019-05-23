@@ -34,9 +34,10 @@ class Page1 extends Component {
     })
   }
   scrollToBottom = () => {
-    scroll.scrollTo(1000,{
+    scroll.scrollToBottom({
       duration:800,
       delay:0,
+      offset:-1000,
       smooth:'easeInOutCubic',
     })
   }

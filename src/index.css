@@ -67,7 +67,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:#fff;
-  background:#232323;
+  background:#161616;
 }
 
 a {
@@ -115,4 +115,11 @@ margin-bottom:8px;
 }
 .apexcharts-legend-marker{
   cursor:default !important;
+}
+
+@media screen and (max-width: 700px) {
+  html,body{
+    width:100%;
+    overflow-x: hidden;
+  }
 }

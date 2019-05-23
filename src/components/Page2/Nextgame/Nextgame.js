@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Nextgame.module.css'
 
 const Nextgame = ({
-    setInitialStagePage2
+    setInitialStagePage2,
 }) => {
     return (
         <div className={styles.wrapper}>

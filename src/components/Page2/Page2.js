@@ -81,6 +81,7 @@ class Page2 extends Component {
       comment,
       datapost,
       setInitialStagePage1,
+      startscroll
     } = this.props
     const {
       getdata,

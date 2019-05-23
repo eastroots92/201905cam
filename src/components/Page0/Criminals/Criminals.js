@@ -14,7 +14,8 @@ const Criminals = ({criminals, selectedIndex, selectCriminal}) => {
                 className={cx('criminal',{selected: selectedIndex === criminal.key})} 
                 style={{backgroundImage: 
                     "url("+criminal.imgurlc+")"}}
-                ><div className={styles.summarybox}>
+                >
+                    <div className={styles.summarybox}>
                        피고인: {criminal.criminal}<br/>
                         특징: {criminal.summary}
                    </div>

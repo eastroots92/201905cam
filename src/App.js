@@ -120,8 +120,8 @@ class App extends Component {
     const { name } = event.target
     this.setState({selectedIndex:Number(name)})
     scroll.scrollToTop({
-      duration: 0,
-      delay: 0,
+      duration:0,
+      delay:0,
     })
   }
 
