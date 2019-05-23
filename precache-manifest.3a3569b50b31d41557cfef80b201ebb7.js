@@ -4,6 +4,10 @@ self.__precacheManifest = [
     "url": "/201905cam/static/media/title.0127d6d2.png"
   },
   {
+    "revision": "4457e854e378dc9256b832068d1dad1c",
+    "url": "/201905cam/static/media/back1.4457e854.png"
+  },
+  {
     "revision": "5d64a3297fd27d353278c601c0edaba5",
     "url": "/201905cam/static/media/HGG80g.5d64a329.ttf"
   },
@@ -16,23 +20,23 @@ self.__precacheManifest = [
     "url": "/201905cam/static/js/runtime~main.152df683.js"
   },
   {
-    "revision": "719d8d580bcfb8db8c6a",
-    "url": "/201905cam/static/js/main.7d385310.chunk.js"
+    "revision": "1194d2d7377264154b0a",
+    "url": "/201905cam/static/js/main.ea0956b0.chunk.js"
   },
   {
-    "revision": "fa26b021fb20a48fd0c3",
-    "url": "/201905cam/static/js/2.e9ab3179.chunk.js"
+    "revision": "77d2c873cb2b4ea2dea5",
+    "url": "/201905cam/static/js/2.508d8205.chunk.js"
   },
   {
-    "revision": "719d8d580bcfb8db8c6a",
-    "url": "/201905cam/static/css/main.d718af29.chunk.css"
+    "revision": "1194d2d7377264154b0a",
+    "url": "/201905cam/static/css/main.631c3842.chunk.css"
   },
   {
-    "revision": "fa26b021fb20a48fd0c3",
-    "url": "/201905cam/static/css/2.35140bec.chunk.css"
+    "revision": "77d2c873cb2b4ea2dea5",
+    "url": "/201905cam/static/css/2.bc2665cf.chunk.css"
   },
   {
-    "revision": "b1ad53758162dd687a669164ef516536",
+    "revision": "72c2c829476ba4a67fa2ec8c0c1204fb",
     "url": "/201905cam/index.html"
   }
 ];
