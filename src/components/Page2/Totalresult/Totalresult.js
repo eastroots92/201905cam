@@ -29,7 +29,7 @@ class Totalresult extends Component {
                   },
                   dropShadow: {
                     enabled: true,
-                  }
+                  },
                 },
                 stroke: {
                   width: 0,
