@@ -12,6 +12,10 @@
     font-weight: 800;
     color:#333;
 }
+.reason{
+    line-height:170%;
+    font-size: 21px;
+}
 .title{
     margin:30px 0;
     font-size:21px;
@@ -21,19 +25,24 @@
     white-space: nowrap;
 }
 .content{
-    display:flex;
     white-space: nowrap;
+}
+.wraptxt{
+    white-space: normal;
+    flex:3;
+}
+.content ul{
+    text-align: left;
+    display:flex;
 }
 .content ul li{
     margin-bottom:20px;
+    line-height: 130%;
 }
-.contentleft{
-    text-align:justify;
-    
-}
-.contentright{
-    text-align:left;
-    margin-left:50px;
+.content ul li.leftcon{
+    flex:1;
+}.content ul li.rightcon{
+    flex:3;
 }
 .subtitle{
     font-weight: bold;

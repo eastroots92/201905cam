@@ -24,7 +24,7 @@ const Myresult = ({
     let myavgResult = filtering(getdata,...typefilter[type])
     let myavgResultValue=getAverage(myavgResult.map(d=>d.answer2))
     let myavgProbation=0; 
-    
+
     if(probation===1){
         myavgProbation=getAverage(myavgResult.map(d=>d.answer3))
     }
@@ -44,18 +44,22 @@ const Myresult = ({
                         대한민국법원<br/>
                         판  결</div>
                     <div className={styles.content}>
-                        <ul className={styles.contentleft}>
-                            <li>사&nbsp;&nbsp;&nbsp;건</li>
-                            <li>피고인</li>
-                            <li>변호인</li>
-                            <li>판결선고</li>
+                        <ul>
+                            <li className={styles.leftcon}>사&nbsp;&nbsp;&nbsp;건</li>
+                            <li className={styles.wraptxt}>성폭력범죄의처벌등에관한특례법위반(카메라등이용촬영)</li>
                         </ul>
-                        <ul className={styles.contentright}>
-                            <li>성폭력범죄의처벌등에관한특례법위반 (카메라등이용촬영)</li>
-                            <li>{criminals[selectedIndex].criminal}</li>
-                            <li>담당변호사 {criminals[selectedIndex].criminal}</li>
-                            <li>{today}</li>
+                        <ul>
+                            <li  className={styles.leftcon}>피고인</li>
+                            <li className={styles.rightcon}>{criminals[selectedIndex].criminal}</li>
                         </ul>
+                        <ul>
+                            <li  className={styles.leftcon}>변호인</li>
+                            <li className={styles.rightcon}>담당변호사 {criminals[selectedIndex].criminal}</li>
+                        </ul>
+                        <ul>
+                             <li  className={styles.leftcon}>판결선고</li>
+                             <li className={styles.rightcon}>{today}</li> 
+                       </ul>
                     </div>
                 </div>
                 <div className={styles.section}>

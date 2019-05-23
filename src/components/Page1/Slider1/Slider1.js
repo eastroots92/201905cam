@@ -38,7 +38,7 @@ const Slider1 = ({
                     step={1000000}
                     format={moneyFormat}
                     value={answer2}
-                    labels={{ 1000000:'백만원', 10000000: '천만원', 20000000: '이천만원', 30000000: '삼천만원'}}
+                    labels={{ 1000000:'1백만 원', 10000000: '1천만 원', 20000000: '2천만 원', 30000000: '3천만 원'}}
                     onChange={sliderChange1}
                     onChangeComplete={scrolltoPrb}
                     />

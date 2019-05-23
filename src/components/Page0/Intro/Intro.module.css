@@ -1,5 +1,5 @@
 .wrapper{
-    font-size:18px;
+    font-size:21px;
     text-align: center;
     line-height:170%;
     margin:0;
@@ -45,11 +45,19 @@ color:#1dcad3;
     .wrapper{
         margin:80px 10px 60px 10px;
     }
-    .selectage{
+    .selectsex, .selectage{
         margin:10px 0;
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .selectage{
+        padding-bottom:10px;
+        border-bottom:1px solid #666;
+        border-style: dotted;
+    }
+    .selectsex{
+        padding-top:10px;
     }
     .button{
         width:90%;
@@ -58,6 +66,10 @@ color:#1dcad3;
         white-space: nowrap;
     }
     .selectage li{
+        width:33%;
+        margin-bottom:15px;
+    }
+    .selectsex li{
         width:33%;
         margin-bottom:15px;
     }

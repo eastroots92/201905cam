@@ -69,9 +69,6 @@
     z-index:10;
     position: relative;
 }
-/* .button.selected{
-    display:none;
-} */
 
 @media screen and (max-width: 700px) {
     .criminallist{

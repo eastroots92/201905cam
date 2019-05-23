@@ -176,20 +176,20 @@ class Totalresult extends Component {
                             if (seriesIndex===0){
                             return '<div class="bartooltip">' +
                             '<div ><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
-                            '<div> <span class="tooltipsub">평균형량: </span>' + monthFormat(mabuAvg[type][seriesIndex]) + '</div>'+
+                            '<div> <span class="tooltipsub">평균형량: </span>' + monthFormat(mabuAvg[selectedIndex][seriesIndex]) + '</div>'+
                             '</div>'
                             }
                             else if (seriesIndex===1){
                               return '<div class="bartooltip">' +
                               '<div><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
-                              '<div><span class="tooltipsub">평균형량: </span>' + monthFormat(mabuAvg[type][seriesIndex][0]) + '</div>'+
-                              '<div><span class="tooltipsub">집행유예 평균형량: </span>' + monthFormat(mabuAvg[type][seriesIndex][1]) + '</div>'+
+                              '<div><span class="tooltipsub">평균형량: 징역 </span>' + monthFormat(mabuAvg[selectedIndex][seriesIndex][0]) + '</div>'+
+                              '<div><span class="tooltipsub">집행유예 </span>' + monthFormat(mabuAvg[selectedIndex][seriesIndex][1]) + '</div>'+
                               '</div>'
                               }
                             else if (seriesIndex===2){
                               return '<div class="bartooltip">' +
                               '<div ><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
-                              '<div> <span class="tooltipsub">평균형량: </span>' + moneyFormat(mabuAvg[type][seriesIndex]) + '</div>'+
+                              '<div> <span class="tooltipsub">평균형량: </span>' + moneyFormat(mabuAvg[selectedIndex][seriesIndex]) + '</div>'+
                               '</div>'
                                 }
                            else if (seriesIndex===3){
@@ -276,8 +276,8 @@ class Totalresult extends Component {
               else if (seriesIndex===1){
                 return '<div class="bartooltip">' +
                 '<div ><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
-                '<div> <span class="tooltipsub">평균형량: </span>' + monthFormat(type1avg.toFixed(1)) + '</div>'+
-                '<div><span class="tooltipsub">집행유예 평균형량: </span>' + monthFormat(type1avgprobation.toFixed(1)) + '</div>'+
+                '<div> <span class="tooltipsub">평균형량: 징역 </span>' + monthFormat(type1avg.toFixed(1)) + '</div>'+
+                '<div><span class="tooltipsub">집행유예 </span>' + monthFormat(type1avgprobation.toFixed(1)) + '</div>'+
                 '</div>'
               }
               else if (seriesIndex===2){
@@ -289,8 +289,8 @@ class Totalresult extends Component {
               else if (seriesIndex===3){
                 return '<div class="bartooltip">' +
                 '<div ><span class="tooltiptitle">' + w.globals.seriesNames[seriesIndex] +': </span>'+ series[seriesIndex][dataPointIndex] + '건</div>' +
-                '<div> <span class="tooltipsub">평균형량: </span>' + moneyFormat(type3avg.toFixed(0)) + '</div>'+
-                '<div><span class="tooltipsub">집행유예 평균형량: </span>' + monthFormat(type3avgprobation.toFixed(1)) + '</div>'+
+                '<div> <span class="tooltipsub">평균형량: 벌금 </span>' + moneyFormat(type3avg.toFixed(0)) + '</div>'+
+                '<div><span class="tooltipsub">집행유예 </span>' + monthFormat(type3avgprobation.toFixed(1)) + '</div>'+
                 '</div>'
               }
 
@@ -317,7 +317,7 @@ class Totalresult extends Component {
             </div>
             <div className={styles.mabuchart}>
               <div className={styles.subtitle}>'{criminals[selectedIndex].summary}'에 대한 실제 판결은?</div>
-              <p className={styles.total}>2018년 서울지역 5개 법원 판결 <span> {mabuCount[selectedIndex][4]}</span>건</p>
+              <p className={styles.total}>2018년 서울지역 5개 법원 1심 판결 <span> {mabuCount[selectedIndex][4]}</span>건</p>
               <Chart options={this.state.options2} series={this.state.series2} type="bar" height="150" />
             </div>
         </div>

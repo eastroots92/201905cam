@@ -103,6 +103,7 @@ body {
 }
 .bartooltip div{
 margin-bottom:8px;
+font-size: 18px;
 }
 .bartooltip div:last-child{
   margin-bottom:0;
@@ -111,7 +112,7 @@ margin-bottom:8px;
   font-weight: 800;
 }
 .apexcharts-canvas{
-  margin-top:-30px;
+  margin-top:-10px;
 }
 .apexcharts-legend-marker{
   cursor:default !important;
