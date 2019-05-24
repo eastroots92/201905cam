@@ -9,6 +9,9 @@ class Mygraph extends Component {
         this.state = {
           options: {
             chart: {
+                animations: {
+                   enabled:false,
+                },
                 toolbar: {
                     show: false
                 },
@@ -62,17 +65,6 @@ class Mygraph extends Component {
             },
             colors: ['#0099a8','#a18529', '#999'],
             tooltip:{
-                
-                // custom: function({series, seriesIndex, dataPointIndex, w}) {
-                //     if(type===1 || type===3){
-                //         let prob=[
-                //             monthFormat(answer3),monthFormat(myavgProbation),monthFormat(mabu[1])
-                //         ];
-                //         return '<div class="mytooltip">' +w.globals.seriesNames[seriesIndex]+': 징역 '+monthFormat(w.globals.seriesX[seriesIndex])+' 집행유예 '+prob[seriesIndex]+'</div>'     
-                //     }else{
-                //       return '<div class="mytooltip">' +w.globals.seriesNames[seriesIndex]+': 징역 '+monthFormat(w.globals.seriesX[seriesIndex])+'</div>'     
-                //     }
-                //     },
             },
           },
           options2: {
@@ -170,7 +162,7 @@ class Mygraph extends Component {
                     custom: function({series, seriesIndex, dataPointIndex, w}) {
                         if(type===1 || type===3){
                             let prob=[
-                                moneyFormat(answer3),monthFormat(myavgProbation)
+                                monthFormat(answer3),monthFormat(myavgProbation)
                             ];
                             return '<div class="mytooltip">' +w.globals.seriesNames[seriesIndex]+': 벌금 '+moneyFormat(w.globals.seriesX[seriesIndex])+' 집행유예 '+prob[seriesIndex]+'</div>'     
                         }else{

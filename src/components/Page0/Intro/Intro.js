@@ -71,7 +71,7 @@ const Intro = ({
             </div>
             <div className={styles.userinfo}>
                 '시민판사' 입니다.<br/>
-                오늘 당신은 <span className={styles.impact}>불법촬영</span> 사건을 판결해야합니다.<br/>
+                오늘 당신은 <span className={styles.impact}>불법촬영</span> 사건을 판결해야 합니다.<br/>
                 아래 피고인 5명에게 당신은 어떤 판결을 내리시겠습니까?
             </div>
         </div>

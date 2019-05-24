@@ -75,7 +75,7 @@ const Myresult = ({
                                 </>
                             )} 
                         </div>
-                                <Mygraph
+                                {/* <Mygraph
                                     answer1={answer1}
                                   answer2={answer2}
                                   answer3={answer3}
@@ -86,7 +86,7 @@ const Myresult = ({
                                   probation={probation}
                                   monthFormat={monthFormat}
                                   moneyFormat={moneyFormat}
-                                />
+                                /> */}
                     </div>
                 </div> 
                 {comment !== '' &&(

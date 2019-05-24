@@ -19,6 +19,9 @@
     transform:scale(1);
     transition: all 0.3s;
     position: relative;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-image: url('http://mabu.newscloud.sbs.co.kr/2019img/img/back.png')
 }
 .articles li:hover .articleimg{
     /* transform:scale(1.2); */

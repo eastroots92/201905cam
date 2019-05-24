@@ -4,6 +4,7 @@
     margin-bottom:30px;
 }
 .criminallist{
+    width:100%;
     display:flex;
     justify-content: space-between;
     margin-bottom:0;
