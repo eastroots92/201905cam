@@ -24,15 +24,16 @@ const Myresult = ({
     let myavgResult = filtering(getdata,...typefilter[type])
     let myavgResultValue=getAverage(myavgResult.map(d=>d.answer2))
     let myavgProbation=0; 
-
     if(probation===1){
         myavgProbation=getAverage(myavgResult.map(d=>d.answer3))
     }
+    
     let value
     if(type<2){
         value=monthFormat(answer2)
     }
     else{ value=moneyFormat(answer2)}
+    
     //마부작침분석판결
     const mabu = mabuAvg[selectedIndex][type]
 
