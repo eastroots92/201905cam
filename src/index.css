@@ -88,10 +88,11 @@ body {
 *,button:focus {outline:0;}
 .bartooltip{
   padding:10px;
+  background: #fff;
 }
 .bartooltip div{
-margin-bottom:8px;
-font-size: 18px;
+margin-bottom:10px;
+font-size: 16px;
 }
 .bartooltip div:last-child{
   margin-bottom:0;
@@ -101,6 +102,7 @@ font-size: 18px;
 }
 .apexcharts-canvas{
   margin-top:-10px;
+  margin-left:-8px;
 }
 .apexcharts-legend-marker{
   cursor:default !important;

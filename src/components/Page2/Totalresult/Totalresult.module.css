@@ -14,12 +14,14 @@
 .subtitle{
     font-weight: bold;
     margin-bottom:20px;
+    white-space: nowrap;
 }
 .total{
     margin:10px 0;
+    white-space: nowrap;
 }
 .total span{
-    font-weight: 800;
+    font-weight: bold;
     font-size:18px;
     color:#333;
 }

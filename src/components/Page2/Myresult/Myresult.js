@@ -74,7 +74,7 @@ const Myresult = ({
                             )} 
                         </div>
                         {/* .. */}
-                        <div className={styles.myresult}>
+                        <div className={styles.bargraph}>
                             시민 판사 평균 : {myavgResultValue} &nbsp;
                             {answer3 > 0 &&(
                                 <>

@@ -7,6 +7,7 @@ import {moneyFormat,monthFormat} from '../../../utils'
 class Totalresult extends Component {
     constructor(props){
         super(props)
+        let width=window.innerWidth/2
         const {selectedIndex, mabuCount, mabuAvg, type } =this.props
         this.state={
             options: {
@@ -25,7 +26,6 @@ class Totalresult extends Component {
                 dataLabels: {
                   style: {
                     fontSize: '18px',
-                    fontFamily: 'hgg, snas-serif',
                   },
                   dropShadow: {
                     enabled: true,
@@ -75,17 +75,18 @@ class Totalresult extends Component {
                 },
                 tooltip: {
                   enabled: true,
-                  // custom: undefined,
-                  style: {
-                    fontSize: '14px',
-                    fontFamily: 'hgg, sans-serif'
-                  },
                   onDatasetHover: {
                       highlightDataSeries: false,
                   },
                   x: {
                       show: false,
-                  },  
+                  }, 
+                  fixed: {
+                    enabled: true,
+                    position: 'topright',
+                    offsetX:0,
+                    offsetY: -30,
+                }, 
               }
               },
               options2: {
@@ -104,7 +105,6 @@ class Totalresult extends Component {
                 dataLabels: {
                   style: {
                     fontSize: '18px',
-                    fontFamily: 'hgg, snas-serif',
                   },
                   dropShadow: {
                     enabled: true,
@@ -155,10 +155,12 @@ class Totalresult extends Component {
                 tooltip: {
                   enabled: true,
                   // custom: undefined,
-                  style: {
-                    fontSize: '14px',
-                    fontFamily: 'hgg, sans-serif'
-                  },
+                  fixed: {
+                    enabled: true,
+                    position: 'topright',
+                    offsetX:0,
+                    offsetY: -30,
+                },
                   onDatasetHover: {
                       highlightDataSeries: false,
                   },

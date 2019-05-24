@@ -6,21 +6,19 @@
     text-align:left;
     margin-top:20px;
     line-height:170%;
-    font-size: 18px;
 }
 .myresult span{
-    font-weight: 800;
+    font-weight: bold;
     color:#333;
 }
 .reason{
     line-height:170%;
-    font-size: 18px;
 }
 .title{
     text-align:center;
     margin:30px 0;
-    font-size:21px;
-    font-weight: 800;
+    font-size:18px;
+    font-weight: bold;
     line-height:180%;
     letter-spacing:1em;
     white-space: nowrap;
