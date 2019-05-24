@@ -67,13 +67,14 @@ const Myresult = ({
                     <div className={styles.title}>주  문</div>
                         <div className={styles.myresult}>
                             피고인을 <span> {typename[type]}&nbsp;{value}</span>에 처한다.<br/>
-                            {answer3 > 0 &&(
+                            {probation=== 1 &&(
                                 <>
                                 다만, 이 판결확정일부터 <span> {monthFormat(answer3)}</span>간 위 형의 집행을 유예한다.
                                 </>
                             )} 
                         </div>
-                        {/* <div className={styles.myresult}>
+                        {/* .. */}
+                        <div className={styles.myresult}>
                             시민 판사 평균 : {myavgResultValue} &nbsp;
                             {answer3 > 0 &&(
                                 <>
@@ -90,7 +91,7 @@ const Myresult = ({
                                 </>
                             )}
                         </div>
-                        )} */}
+                        )}
                     </div>
                 </div> 
                 {comment !== '' &&(

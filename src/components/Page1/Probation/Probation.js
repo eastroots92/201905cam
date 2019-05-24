@@ -68,7 +68,7 @@ class Probation extends Component {
                         onChangeComplete={ scrolltoJudge}
                         />
                     </div>
-                        <div className={styles.value}>{monthFormat(answer3)}</div>
+                        <div className={styles.value}><span>{monthFormat(answer3)}</span></div>
                     </>
                     
                 )}            

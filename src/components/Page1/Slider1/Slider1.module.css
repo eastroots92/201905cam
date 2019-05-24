@@ -39,6 +39,9 @@ to {
   font-weight: 800;
   margin-top:80px;
 }
+.value span{
+  background-color:rgba(38,201,211,.3);
+}
 @media screen and (max-width: 700px) {
   .subtitle{
     font-size:14px;

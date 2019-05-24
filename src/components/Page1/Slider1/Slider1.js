@@ -42,7 +42,7 @@ const Slider1 = ({
                     onChange={sliderChange1}
                     onChangeComplete={scrolltoPrb}
                     />
-                    <div className={styles.value}>{moneyFormat(answer2)}</div>
+                    <div className={styles.value}><span>{moneyFormat(answer2)}</span></div>
                     </>
                 )}
         </div>

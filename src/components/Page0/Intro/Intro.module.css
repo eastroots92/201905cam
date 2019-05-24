@@ -46,22 +46,14 @@ color:#1dcad3;
         margin:80px 10px 60px 10px;
     }
     .selectsex, .selectage{
-        margin:10px 0;
+        margin:0;
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .selectage{
-        padding-bottom:10px;
-        border-bottom:1px solid #666;
-        border-style: dotted;
-    }
-    .selectsex{
-        padding-top:10px;
-    }
     .button{
         width:90%;
-        padding:5px 15px;
+        /* padding:5px 15px; */
         margin:0 10px;
         white-space: nowrap;
     }
@@ -71,6 +63,6 @@ color:#1dcad3;
     }
     .selectsex li{
         width:33%;
-        margin-bottom:15px;
+        /* margin-bottom:15px; */
     }
   }

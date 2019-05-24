@@ -32,14 +32,12 @@ class Page1 extends Component {
       delay:0,
       smooth:'easeInOutCubic',
     })
-    e.stopPropagation();
   }
   scrollToBottom = (e) => {
     let height=window.innerHeight;
-    scroll.scrollToTop({
+    scroll.scrollTo(height,{
       duration:800,
       delay:0,
-      offset: height,
       isDynamic:true,
       smooth:'easeInOutCubic',
     })
