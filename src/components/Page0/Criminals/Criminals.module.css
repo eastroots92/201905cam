@@ -13,7 +13,7 @@
     flex:1;
     height:300px;
     margin: 0 5px;
-    border:1px solid #000;
+    border:none;
     transition: all .5s;
     background-repeat: no-repeat;
     background-size: cover;
@@ -92,10 +92,9 @@
 
     }
     .criminal:hover{
-        opacity:1;
-        background-position-x:80%;
-        border:1px solid #a5e5d9;
+        box-shadow: none;
     }
+
     .button{
         width:100%;
         height:100%;

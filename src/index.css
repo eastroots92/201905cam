@@ -107,7 +107,28 @@ font-size: 16px;
 .apexcharts-legend-marker{
   cursor:default !important;
 }
-
+.mytooltip{
+  font-size:14px;
+  padding:10px;
+}
+#mygraph{
+    margin-top:30px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+#mygraph .apexcharts-canvas{
+  margin-top:0;
+  margin-left:0;
+}
+/* .apexcharts-xaxistooltip-bottom:before{
+  display:none !important
+}
+.apexcharts-xaxistooltip-bottom:after{
+  display:none !important;
+}
+#mygraph .apexcharts-tooltip{
+  display:none;
+} */
 @media screen and (max-width: 700px) {
   html,body{
     width:100%;

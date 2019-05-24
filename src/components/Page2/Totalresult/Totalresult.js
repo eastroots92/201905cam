@@ -154,6 +154,7 @@ class Totalresult extends Component {
                 },
                 tooltip: {
                   enabled: true,
+                  shared:false,
                   // custom: undefined,
                   fixed: {
                     enabled: true,
@@ -313,7 +314,7 @@ class Totalresult extends Component {
     return (
         <div className={styles.wrapper}>
             <div className={styles.siminchart}>
-              <div className={styles.subtitle}>이 사건에 대한 다른 '시민 판사'들의 구형은?</div>  
+              <div className={styles.subtitle}>이 사건에 대한 다른 '시민 판사'들의 판단은?</div>  
               <p className={styles.total}>총 <span> {getdata.length}</span>건의 판결</p>
               <Chart options={this.state.options} series={this.state.series1} type="bar" height="150"/>
             </div>

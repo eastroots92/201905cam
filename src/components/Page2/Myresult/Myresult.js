@@ -1,6 +1,7 @@
 import React from 'react'
 import { monthFormat, moneyFormat} from '../../../utils'
 import styles from './Myresult.module.css'
+import Mygraph from '../Mygraph'
 
 let today = new Date().toISOString().slice(0, 10).replace(/-/g,".");
 
@@ -27,7 +28,8 @@ const Myresult = ({
     if(probation===1){
         myavgProbation=getAverage(myavgResult.map(d=>d.answer3))
     }
-    
+    console.log(myavgResult)
+    console.log(myavgResultValue)
     let value
     if(type<2){
         value=monthFormat(answer2)
@@ -73,25 +75,18 @@ const Myresult = ({
                                 </>
                             )} 
                         </div>
-                        {/* .. */}
-                        <div className={styles.bargraph}>
-                            시민 판사 평균 : {myavgResultValue} &nbsp;
-                            {answer3 > 0 &&(
-                                <>
-                                집행유예: {myavgProbation}
-                                </>
-                            )}
-                        </div>
-                        {type !== 3 &&(
-                        <div className={styles.myresult}>
-                            마부작침 분석 평균: {mabu[0]} &nbsp;
-                            {type ===1 &&(
-                                <>
-                                집행유예: {mabu[1]}
-                                </>
-                            )}
-                        </div>
-                        )}
+                                <Mygraph
+                                    answer1={answer1}
+                                  answer2={answer2}
+                                  answer3={answer3}
+                                  myavgResultValue={myavgResultValue}
+                                  myavgProbation={myavgProbation}
+                                  mabu={mabu}
+                                  type={type}
+                                  probation={probation}
+                                  monthFormat={monthFormat}
+                                  moneyFormat={moneyFormat}
+                                />
                     </div>
                 </div> 
                 {comment !== '' &&(
