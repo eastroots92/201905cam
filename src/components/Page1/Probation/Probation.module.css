@@ -1,10 +1,15 @@
 .wrapper{
     margin:50px 0;
     width:100%;
+    transition:opacity 0.5s;
     -webkit-animation-name: appear; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
     animation-name: appear;
     animation-duration: 3s;
+}
+.wrapper.disablewrap{
+    transition: opacity 0.5s;
+    opacity:0.3;
 }
 @-webkit-keyframes appear {
     from {opacity:0;}
@@ -62,26 +67,9 @@
     box-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #647971, 0 0 16px #647971, 0 0 20px #647971;
 }
 .button.disable{
-    -webkit-animation-name: disable; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
-    animation-name: disable;
-    animation-duration: 0.5s;
     border:1px solid #888;
     color:#888;
 }
-@-webkit-keyframes disable {
-    from {border:1px solid #a5e5d9;
-        color:#a5e5d9;}
-    to {border:1px solid #888;
-        color:#888;}
-  }
-  
-  @keyframes disable {
-    from {border:1px solid #a5e5d9;
-        color:#a5e5d9;}
-    to {border:1px solid #888;
-        color:#888;}
-  }
 .button.disable:hover{
     border:1px solid #888;
     color:#888;

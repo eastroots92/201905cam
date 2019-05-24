@@ -1,16 +1,4 @@
-@font-face{
-  font-family:'hgg';
-  font-style:normal;
-  font-weight: 400;
-  src:url(./assets/font/HGG20g.ttf);
-}
-@font-face{
-  font-family:'hgg';
-  font-style:normal;
-  font-weight: 800;
-  src:url(./assets/font/HGG80g.ttf); 
-}
-
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -86,7 +74,7 @@ button {
 }
 body::-webkit-scrollbar { width: 0 !important }
 body { 
-  font-family:'hgg', sans-serif;
+  font-family:'Nanum Gothic', sans-serif;
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   -webkit-user-select: none; /* Safari 3.1+ */
