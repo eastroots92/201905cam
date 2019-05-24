@@ -23,12 +23,26 @@ class Mygraph extends Component {
                 show:false
             },
             markers: {
-                size: 10,
-                radius:10,
+                size: 20,
+                radius:20,
                 hover: {
-                    size:10
+                    size:20
                   }
             },
+            // markers: {
+            //     size: 20
+            //   },
+              fill: {
+                type: 'image',
+                opacity: 1,
+                image: {
+                  src: ['http://mabu.newscloud.sbs.co.kr/2019img/img/me.png',
+                  'http://mabu.newscloud.sbs.co.kr/2019img/img/avg.png',
+                  'http://mabu.newscloud.sbs.co.kr/2019img/img/real.png'],
+                  width: 40,
+                  height: 40
+                }
+              },
             legend:{
                 position: 'top',
                 // itemMargin: {
@@ -57,18 +71,22 @@ class Mygraph extends Component {
                     show: false,
                 }
             },
-            yaxis: {
-                tickAmount:1,
-                show:false,
-                axisBorder: {
-                    show: false,
-                },
-                axisTicks: {
-                    show:false,
-                },
-                tooltip:{
-                    enable:false
-                }
+            // yaxis: {
+            //     show:false,
+            //     axisBorder: {
+            //         show: false,
+            //     },
+            //     axisTicks: {
+            //         show:false,
+            //     },
+            //     tooltip:{
+            //         enable:false
+            //     }
+            // },
+            yaxis:{
+                tickAmount: 6,
+                min: 0,
+                max: 6,
             },
             colors: ['#0099a8','#a18529', '#999'],
             tooltip:{
@@ -127,7 +145,6 @@ class Mygraph extends Component {
                 }
             },
             yaxis: {
-                tickAmount:1,
                 show:false,
                 axisBorder: {
                     show: false,
@@ -152,8 +169,6 @@ class Mygraph extends Component {
           this.setState({
               options:{
                 tooltip:{
-                    enabled:true,
-                    intersect: false,
                     custom: function({series, seriesIndex, dataPointIndex, w}) {
                     if(type===1 || type===3){
                         let prob=[
@@ -168,7 +183,6 @@ class Mygraph extends Component {
               },
               options2:{
                 tooltip:{
-                    enabled:true,
                     custom: function({series, seriesIndex, dataPointIndex, w}) {
                         if(type===1 || type===3){
                             let prob=[
@@ -188,12 +202,12 @@ class Mygraph extends Component {
                     {
                     name: "나",
                     data: [  
-                      [props.answer2,0],
+                      [props.answer2,1],
                     ],
                    },
                   {
                     name: "시민 판사",
-                    data:[[props.myavgResultValue,0]],
+                    data:[[props.myavgResultValue,1]],
                   },    
                 ],
               })
@@ -203,16 +217,16 @@ class Mygraph extends Component {
                 {
                 name: "나",
                 data: [  
-                  [props.answer2,0],
+                  [props.answer2,1],
                 ],
                },
               {
                 name: "시민 판사",
-                data:[[props.myavgResultValue,0]],
+                data:[[props.myavgResultValue,1]],
               },
               {
                 name: "실제 판결",
-                data:[[props.mabu[0],0]]
+                data:[[props.mabu[0],1]]
               }    
             ],
           })
