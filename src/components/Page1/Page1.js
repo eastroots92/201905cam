@@ -26,18 +26,21 @@ class Page1 extends Component {
     }
   }
 // scroll
-  scrollToTop = () => {
+  scrollToTop = (e) => {
     scroll.scrollToTop({
       duration:300,
       delay:0,
       smooth:'easeInOutCubic',
     })
+    e.stopPropagation();
   }
-  scrollToBottom = () => {
-    scroll.scrollToBottom({
+  scrollToBottom = (e) => {
+    let height=window.innerHeight;
+    scroll.scrollToTop({
       duration:800,
       delay:0,
-      offset:0,
+      offset: height,
+      isDynamic:true,
       smooth:'easeInOutCubic',
     })
   }
@@ -76,9 +79,11 @@ class Page1 extends Component {
     })
     scroll.scrollTo(scroll1, {
       duration:600,
-      delay:200,
+      delay:0,
+      isDynamic:true,
       smooth:'easeInOutCubic',
     });
+    event.preventDefault();
   }
 
   sliderChange1 = (value) => {
@@ -123,8 +128,10 @@ class Page1 extends Component {
     scroll.scrollToBottom({
       duration:1000,
       delay:0,
+      isDynamic:true,
       smooth:'easeInOutCubic',
     })
+    event.preventDefault();
   }
   sliderChange2 = (value) => {
     this.setState({
@@ -138,19 +145,19 @@ class Page1 extends Component {
       comment:e.target.value,
     })
   }
-  scrolltoPrb =()=>{
+  scrolltoPrb =(e)=>{
     scroll.scrollToBottom({
       duration:1000,
       delay:0,
-      offset:0,
+      isDynamic:true,
       smooth:'easeInOutCubic',
     })
   }
-  scrolltoJudge =()=>{
+  scrolltoJudge =(e)=>{
     scroll.scrollToBottom({
       duration:1000,
       delay:0,
-      offset:0,
+      isDynamic:true,
       smooth:'easeInOutCubic',
     })
 }
