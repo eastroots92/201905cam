@@ -72,7 +72,7 @@ ul.criminallist{
 }
 
 @media screen and (max-width: 700px) {
-    .criminallist{
+    ul.criminallist{
         width:100%;
         display:block;
     }

@@ -75,18 +75,18 @@ const Myresult = ({
                                 </>
                             )} 
                         </div>
-                                {/* <Mygraph
-                                    answer1={answer1}
-                                  answer2={answer2}
-                                  answer3={answer3}
-                                  myavgResultValue={myavgResultValue}
-                                  myavgProbation={myavgProbation}
-                                  mabu={mabu}
-                                  type={type}
-                                  probation={probation}
-                                  monthFormat={monthFormat}
-                                  moneyFormat={moneyFormat}
-                                /> */}
+                            <Mygraph
+                                answer1={answer1}
+                                answer2={answer2}
+                                answer3={answer3}
+                                myavgResultValue={myavgResultValue}
+                                myavgProbation={myavgProbation}
+                                mabu={mabu}
+                                type={type}
+                                probation={probation}
+                                monthFormat={monthFormat}
+                                moneyFormat={moneyFormat}
+                            />
                     </div>
                 </div> 
                 {comment !== '' &&(

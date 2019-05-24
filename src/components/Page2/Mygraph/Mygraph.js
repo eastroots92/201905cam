@@ -23,14 +23,18 @@ class Mygraph extends Component {
                 show:false
             },
             markers: {
-                size: 10
+                size: 10,
+                radius:10,
+                hover: {
+                    size:10
+                  }
             },
             legend:{
                 position: 'top',
-                itemMargin: {
-                    horizontal: 30,
-                    vertical: 5
-                },
+                // itemMargin: {
+                //     horizontal: 30,
+                //     vertical: 5
+                // },
                 onItemClick: {
                     toggleDataSeries: false
                 },
@@ -49,9 +53,12 @@ class Mygraph extends Component {
                     enabled:false,
                     // offsetY: -50
                 },
+                crosshairs: {
+                    show: false,
+                }
             },
             yaxis: {
-                tickAmount:0,
+                tickAmount:1,
                 show:false,
                 axisBorder: {
                     show: false,
@@ -69,6 +76,9 @@ class Mygraph extends Component {
           },
           options2: {
             chart: {
+                animations: {
+                    enabled:false,
+                 },
                 toolbar: {
                     show: false
                 },
@@ -80,14 +90,18 @@ class Mygraph extends Component {
                 show:false
             },
             markers: {
-                size: 10
+                size: 10,
+                radius:10,
+                hover: {
+                    size:10
+                  }
             },
             legend:{
                 position: 'top',
-                itemMargin: {
-                    horizontal: 30,
-                    vertical: 5
-                },
+                // itemMargin: {
+                //     horizontal: 30,
+                //     vertical: 5
+                // },
                 onItemClick: {
                     toggleDataSeries: false
                 },
@@ -108,9 +122,12 @@ class Mygraph extends Component {
                     enabled:false,
                     // offsetY: -50
                 },
+                crosshairs: {
+                    show: false,
+                }
             },
             yaxis: {
-                tickAmount:0,
+                tickAmount:1,
                 show:false,
                 axisBorder: {
                     show: false,
@@ -124,16 +141,6 @@ class Mygraph extends Component {
             },
             colors: ['#0099a8','#a18529', '#999'],
             tooltip:{
-                // custom: function({series, seriesIndex, dataPointIndex, w}) {
-                //     if(type===1 || type===3){
-                //         let prob=[
-                //             moneyFormat(answer3),moneyFormat(myavgProbation)
-                //         ];
-                //         return '<div class="mytooltip">' +w.globals.seriesNames[seriesIndex]+': 벌금 '+monthFormat(w.globals.seriesX[seriesIndex])+' 집행유예 '+prob[seriesIndex]+'</div>'     
-                //     }else{
-                //         return '<div class="mytooltip">' +w.globals.seriesNames[seriesIndex]+': 벌금 '+monthFormat(w.globals.seriesX[seriesIndex])+'</div>'     
-                //     }
-                //   },
             },
           },
           series1: [   
@@ -145,6 +152,8 @@ class Mygraph extends Component {
           this.setState({
               options:{
                 tooltip:{
+                    enabled:true,
+                    intersect: false,
                     custom: function({series, seriesIndex, dataPointIndex, w}) {
                     if(type===1 || type===3){
                         let prob=[
@@ -159,6 +168,7 @@ class Mygraph extends Component {
               },
               options2:{
                 tooltip:{
+                    enabled:true,
                     custom: function({series, seriesIndex, dataPointIndex, w}) {
                         if(type===1 || type===3){
                             let prob=[

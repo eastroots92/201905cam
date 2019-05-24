@@ -113,7 +113,6 @@ font-size: 16px;
 }
 #mygraph{
     margin-top:30px;
-    border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
 #mygraph .apexcharts-canvas{
