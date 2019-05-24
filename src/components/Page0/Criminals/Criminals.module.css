@@ -3,7 +3,7 @@
     color:#a5e5d9;
     margin-bottom:30px;
 }
-.criminallist{
+ul.criminallist{
     width:100%;
     display:flex;
     justify-content: space-between;

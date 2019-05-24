@@ -120,6 +120,9 @@ font-size: 16px;
   margin-top:0;
   margin-left:0;
 }
+button{
+  background:transparent;
+}
 /* .apexcharts-xaxistooltip-bottom:before{
   display:none !important
 }
