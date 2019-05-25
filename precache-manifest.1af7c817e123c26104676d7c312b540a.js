@@ -12,15 +12,15 @@ self.__precacheManifest = [
     "url": "/201905cam/static/js/runtime~main.152df683.js"
   },
   {
-    "revision": "637f31870a7f940198fb",
-    "url": "/201905cam/static/js/main.dcaa277f.chunk.js"
+    "revision": "ee8f0d6215bcd73d081f",
+    "url": "/201905cam/static/js/main.30d4d5ad.chunk.js"
   },
   {
     "revision": "0c8aa973c558f289412b",
     "url": "/201905cam/static/js/2.4c2cd09d.chunk.js"
   },
   {
-    "revision": "637f31870a7f940198fb",
+    "revision": "ee8f0d6215bcd73d081f",
     "url": "/201905cam/static/css/main.f05b34e8.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/201905cam/static/css/2.b3209223.chunk.css"
   },
   {
-    "revision": "dfbefbf8bc90ca9a198762bad1c1a0a9",
+    "revision": "23c4db04c65b498d2b8586a6b0077f90",
     "url": "/201905cam/index.html"
   }
 ];
